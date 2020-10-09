@@ -14,7 +14,9 @@ services:
     
     
   frontend:
-    image: cloud.canister.io:5000/alexheld/hde-fronten
+    image: cloud.canister.io:5000/alexheld/hde-frontend
+    ports:
+    - "8081:9000"
     build:
       context: frontend
       dockerfile: Dockerfile

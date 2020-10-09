@@ -1,3 +1,9 @@
+FROM node as builder
+WORKDIR /app
+COPY hde .
+RUN yarn install && yarn build --report
+
+
 FROM ubuntu:xenial
 
 RUN apt-get update && apt-get install -y \
@@ -14,4 +20,4 @@ CMD ["bash","/home/startup.sh"]
 
 EXPOSE 9000
 
-COPY vue_project/dist /home/html/
+COPY --from=builder /app/dist /usr/share/nginx/html
