@@ -1,23 +1,20 @@
 version: '3.5'
 
 services:
-  backend:
+  
+  server:
     ports:
       - "8000:8000"
-    image: alexheld/hde-backend
+    image: cloud.canister.io:5000/alexheld/hde-server
     build:
       context: server
-      dockerfile: Multistage.Dockerfile
+      dockerfile: Dockerfile
 
-  server:
-    container_name: "hde-server"
-    ports:
-    - "8015:8000"
-    image: alexheld/hde-backend
+
     
     
   frontend:
-    image: alex-held/hde-frontend
+    image: cloud.canister.io:5000/alexheld/hde-fronten
     build:
-      context: .
-      dockerfile: frontend/Dockerfile
+      context: frontend
+      dockerfile: Dockerfile
