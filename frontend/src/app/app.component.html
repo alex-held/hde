@@ -94,24 +94,9 @@
 			<!-- Content -->
 				<article class="ud_kontakt">
 
-					<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-						<p>
-						  <label for="name">Name:</label>
-						  <input type="text" formControlName="name" name="name" class="form-control">
-						</p>
+					<app-contact-form>
 
-						<p>
-						  <label for="mail">Mail:</label>
-						  <input type="text" id="mail" name="mail" formControlName="mail" class="form-control">
-						</p>
-
-						<p>
-						  <label for="message">Message:</label>
-						  <input type="text" id="message" name="message" formControlName="message" class="form-control">
-						</p>
-
-						    <button type="submit" class="btn btn-success">Submit</button>
-					</form>
+					</app-contact-form>
 
 						<ul>
 								<li><span class="icon-mail-alt"></span> <a href="">contact@held-der-elektrik.de</a></li>

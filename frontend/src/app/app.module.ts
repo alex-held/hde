@@ -6,10 +6,12 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {SharedModule} from './shared/shared.module';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule ({
 	declarations: [
-		AppComponent
+		AppComponent,
+		ContactComponent
 	],
 	imports: [
 		AppRoutingModule,
