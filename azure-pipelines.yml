@@ -30,4 +30,12 @@ steps:
     action: 'Push services'
     includeSourceTags: true
     includeLatestTag: true
+  
+- task: AzureWebAppContainer@1
+  displayName: "🚢 Deploy to Azure WebApp 🛳"
+  inputs:
+    azureSubscription: 'hde'
+    appName: 'held-der-elektrik'
+    containers: 'cloud.canister.io:5000/alexheld/hde-server cloud.canister.io:5000/alexheld/hde-frontend
+    multicontainerConfigFile: 'docker-compose.prod.yml'
 
