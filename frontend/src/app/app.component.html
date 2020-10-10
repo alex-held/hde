@@ -1,7 +1,6 @@
 <router-outlet></router-outlet>
 
 
-<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
 
   <!-- ########################################################################## -->
 	<!-- Header -->
@@ -18,20 +17,21 @@
 
 			<!-- Navigation -->
 				<nav>
-						<ul>
-								<li><a href="#home">Startseite</a></li>
-								<li><a href="#about-us">Über Uns</a></li>
-								<li><a href="#contact">Kontakt</a></li>
+						<ul id="menu">
+								<li data-menuanchor="home"><a href="#home">Startseite</a></li>
+								<li data-menuanchor="about-us"><a href="#about-us">Über Uns</a></li>
+								<li data-menuanchor="contact"><a href="#contact">Kontakt</a></li>
 						</ul>
 				</nav>
 
 		</header>
 
+
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)" #fullpageRef>
 	<!-- ########################################################################## -->
 	<!-- Startseite -->
 	<!-- ########################################################################## -->
-
-		<section class="ud_page section" id="home">
+		<section class="ud_page section fp-auto-height-responsive" id="home">
 
 				<!-- Headline -->
 				<div id="ud_intro">
@@ -50,7 +50,7 @@
 	<!-- Über Uns -->
 	<!-- ########################################################################## -->
 
-		<section class="ud_page section" id="about-us">
+		<section class="ud_page section fp-auto-height-responsive" id="about-us">
 
 			<!-- Headline -->
 			<h2>Über Uns</h2>
@@ -85,7 +85,7 @@
 	<!-- Kontakt -->
 	<!-- ########################################################################## -->
 
-		<section class="ud_page section" id="contact">
+		<section class="ud_page section  fp-auto-height-responsive" id="contact">
 
 				<!-- Headline -->
 				<h2>Kontakt</h2>

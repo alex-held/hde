@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 		this.config = {
 			anchors: ['home', 'about-us', 'contact'],
 			menu: '#menu',
-			navigation: true,
+			navigation: true
 		}
 	}
 
