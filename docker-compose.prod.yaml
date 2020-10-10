@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+
+    server:
+        env_file:
+            - .env
+            - prod.env
+        ports:
+            - "8000:8000"
+        build:
+            target: prod
+
+
+    frontend:
+        env_file:
+            - prod.env
+            - .env
+        image: "alexheld/hde-frontend:${FRONTEND_TAG}"
+        ports:
+            - "80:80"
+        build:
+            target: prod
