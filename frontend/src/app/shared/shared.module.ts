@@ -7,5 +7,4 @@ import {ContactService} from './services/contact.service';
 	exports: [],
 	providers: [ContactService],
 })
-export class SharedModule {
-}
+export class SharedModule {}

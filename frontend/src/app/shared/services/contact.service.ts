@@ -1,5 +1,6 @@
-import {HttpClient, HttpRequest} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
+import {Observable} from "rxjs";
 import {ContactModel} from '../contact.model';
 
 @Injectable ({
@@ -7,24 +8,23 @@ import {ContactModel} from '../contact.model';
 })
 export class ContactService {
 
-	private url = 'http://localhost:8080/api/contact';
+	private url = 'http://localhost:8000/api/contact';
 
 	constructor (private http: HttpClient) {
 	}
 
-	submitContactForm (contactModel: ContactModel) {
+	submitContactForm (contactModel: ContactModel): Observable<any> {
+
+		return this.http.post (this.url, contactModel);
 
 
-		this.http.request (HttpRequest.constructor ('POST', this.url, {
-			body: JSON.stringify (contactModel),
-			url: this.url,
-			method: 'POST',
-		})).subscribe ({
-			next: res => {
-				console.info ("success:  " + JSON.stringify (res))
-			},
-			error: err => console.error ("ERROR:  " + JSON.stringify (err))
-		})
+//		HttpRequest.constructor ('POST', this.url, {
+//			body: contactModel,
+//			url: this.url,
+//			method: 'POST',
+//		})
+		//)
+		//	;
 	}
 }
 

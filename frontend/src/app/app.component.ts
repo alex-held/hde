@@ -1,6 +1,5 @@
-import {Component} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {ContactModel} from './shared/contact.model';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {ContactService} from './shared/services/contact.service'
 
 @Component ({
@@ -8,28 +7,38 @@ import {ContactService} from './shared/services/contact.service'
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 	title = 'app';
 
-	contactForm: FormGroup;
+	contactForm!: FormGroup;
 
 	constructor (private fb: FormBuilder, private contactService: ContactService) {
-		this.contactForm = this.fb.group ({
-			name: '',
-			mail: '',
-			message: '',
-		});
-
 	}
 
-	getContactData(): FormGroup {
+	ngOnInit (): void {
+		this.contactForm = this.createForm ();
+	}
+
+	getContactData (): FormGroup {
 		return this.contactForm;
 	}
 
 	onSubmit () {
-		const data: ContactModel = this.contactForm.value;
-		console.log(data);
-		this.contactService.submitContactForm (data);
+
+		this.contactService.submitContactForm(this.contactForm.value).subscribe({
+			next: res => {
+				console.info ("success:  " + JSON.stringify (res))
+			},
+			error: err => console.error ("ERROR:  " + JSON.stringify (err))
+		});
+	}
+
+	private createForm (): FormGroup {
+		return new FormGroup ({
+			name: new FormControl (''),
+			mail: new FormControl (''),
+			message: new FormControl ('')
+		});
 	}
 
 }
