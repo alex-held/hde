@@ -5,6 +5,8 @@ import (
 	"os"
 	"strconv"
 	
+	"github.com/rs/cors"
+	
 	"github.com/alex-held/hde/server/pkg/contact"
 	"github.com/alex-held/hde/server/pkg/server"
 )
@@ -18,6 +20,7 @@ func main() {
 	}
 	
 	server := server.NewServerBuilder().
+		WithHandler(cors.AllowAll().Handler).
 		WithRoutingConfiguration(contact.ConfigureContactRoutes()).
 		UsePort(port).
 		Build()

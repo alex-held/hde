@@ -31,6 +31,7 @@ func handleContactFormRequest(c *Context) {
     c.JSON(http.StatusBadRequest, H{"error": err.Error()})
     return
   }
+  
 
   m := createEmail(ContactRequest{
     Name:    form.Name,

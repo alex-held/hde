@@ -1,0 +1,155 @@
+<router-outlet class="content"></router-outlet>
+
+  <!-- ########################################################################## -->
+  <!-- Header -->
+  <!-- ########################################################################## -->
+		<header>
+			<!-- Logo -->
+			<div id="ud_logo"><a href="#Startseite"><img alt="logo" src="/assets/images/logo_image.JPG"/></a></div>
+
+			<!-- Kontakt -->
+				<div id="ud_kontakt_icon">
+						<div class="ud_kontakt_icon"><span class="icon-mail-alt"></span></div>
+						<div class="ud_kontakt_icon"><span class="icon-location"></span></div>
+				</div>
+
+			<!-- Navigation -->
+				<nav>
+						<ul>
+								<li><a href="#Startseite">Startseite</a></li>
+								<li><a href="#about-us">Über Uns</a></li>
+								<li><a href="#Kontakt">Kontakt</a></li>
+						</ul>
+				</nav>
+
+		</header>
+
+  <!-- ########################################################################## -->
+  <!-- Startseite -->
+  <!-- ########################################################################## -->
+
+		<section class="ud_page" id="Startseite">
+
+				<!-- Headline -->
+				<div id="ud_intro">
+
+						<h2>Ihr Partner<br>für Elektrotechnik</h2>
+						<div class="ud_h2_balken"></div>
+
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+
+						<a class="ud_button" href="">Weiter</a>
+				</div>
+
+		</section>
+
+  <!-- ########################################################################## -->
+  <!-- Über Uns -->
+  <!-- ########################################################################## -->
+
+		<section class="ud_page" id="about-us">
+
+			<!-- Headline -->
+			<h2>Über Uns</h2>
+			<div class="ud_h2_balken"></div>
+
+			<!-- Content -->
+				<article class="ud_UberUns">
+						<article>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+										sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
+
+								<p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+										ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+										takimata sanctus est Lorem ipsum dolor sit amet. </p>
+
+								<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore
+										te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+
+						</article>
+				</article>
+
+				<article class="ud_UberUns ud_motto_bg">
+						<article>
+								<div class="ud_motto">"Die Kunst hat das Handwerk nötiger als das Handwerk die Kunst."</div>
+						</article>
+				</article>
+
+		</section>
+
+
+  <!-- ########################################################################## -->
+  <!-- Kontakt -->
+  <!-- ########################################################################## -->
+
+		<section class="ud_page" id="Kontakt">
+
+				<!-- Headline -->
+				<h2>Kontakt</h2>
+				<div class="ud_h2_balken"></div>
+
+			<!-- Content -->
+				<article class="ud_kontakt">
+
+
+					<form id="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+						<p>
+						  <label for="name">Name:</label>
+						  <input type="text" id="name" name="name" formControlName="name" class="form-control">
+						</p>
+
+						<p>
+						  <label for="mail">Mail:</label>
+						  <input type="text" id="mail" name="mail" formControlName="mail" class="form-control">
+						</p>
+
+						<p>
+						  <label for="message">Message:</label>
+						  <input type="text" id="message" name="message" formControlName="message" class="form-control">
+						</p>
+
+						    <button type="submit" class="btn btn-success">Submit</button>
+					</form>
+
+
+					<!--			<form action="javascript: SubmitContactForm();" id="contact-form" name="contact-form">
+									<label for="name">Name</label>
+									<input id="name" name="name" required type="text"> </input>
+									<label for="mail">Mail</label>
+									<input id="mail" name="mail" required type="email"> </input>
+									<label for="message">Nachricht </label>
+									<input id="message" name="message" required type="text"> </input>
+									<button type="submit"/>
+								</form>-->
+						<ul>
+								<li><span class="icon-mail-alt"></span> <a href="">contact@held-der-elektrik.de</a></li>
+								<li><span class="icon-location"></span> Beispielstraße 1, Köln 50667</li>
+								<li><span class="icon-phone"></span> 0221 / 12 34 56</li>
+						</ul>
+				</article>
+
+			<!-- Footer -->
+				<footer>
+
+					<!-- Metanavigation -->
+						<nav id="ud_meta_nav">
+								<ul>
+										<a href="">
+												<li>Impressum</li>
+										</a>
+										<a href="">
+												<li>Datenschutz</li>
+										</a>
+										<a href="">
+												<li>Haftungsausschluss</li>
+										</a>
+								</ul>
+						</nav>
+
+					<!-- Metanavigation -->
+						<div id="ud_copyright">Design by    <a href="mailto://contact@alexheld.io">Alexander Held</a> <a
+								href="https://github.com/alex-held">Alexander Held<</a></div>
+
+				</footer>
+
+		</section>
