@@ -1,13 +1,14 @@
 {
 	"author": "contact@alexheld.io",
 	"dependencies": {
-		"watch": "^1.0.2",
-		"serve": "^11.3.2",
 		"core-js": "^3.6.5",
+		"fullpage.js": "^3.0.9",
 		"primeflex": "^2.0.0",
 		"primeicons": "^4.0.0",
 		"rxjs": "~6.6.0",
+		"serve": "^11.3.2",
 		"tslib": "^2.0.0",
+		"watch": "^1.0.2",
 		"zone.js": "~0.10.3"
 	},
 	"description": "This is the code of the website I created for my uncle's business. He is an electrician in Cologne, so i hope this website will reflect the future.",

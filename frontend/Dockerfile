@@ -1,23 +1,13 @@
-FROM node as builder
-WORKDIR /app
-COPY hde .
-RUN yarn install && yarn build --report
+### STAGE 1: Build ###
+FROM node:alpine AS build
+WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
+RUN npm install
+COPY . .
+RUN npm run build --prod
 
 
-FROM ubuntu:xenial
-
-RUN apt-get update && apt-get install -y \
-    nginx \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY site.conf /etc/nginx/sites-available
-RUN ln -s /etc/nginx/sites-available/site.conf /etc/nginx/sites-enabled
-COPY .htpasswd /etc/nginx
-
-COPY startup.sh /home/
-RUN chmod 777 /home/startup.sh
-CMD ["bash","/home/startup.sh"]
-
-EXPOSE 9000
-
-COPY --from=builder /app/dist /usr/share/nginx/html
+### STAGE 2: Run ###
+FROM nginx:alpine
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /usr/src/app/dist/hde /usr/share/nginx/html
