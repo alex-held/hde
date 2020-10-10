@@ -31,6 +31,6 @@ steps:
   inputs:
     azureSubscription: 'hde'
     appName: 'held-der-elektrik'
-    containers: 'cloud.canister.io:5000/alexheld/hde-server cloud.canister.io:5000/alexheld/hde-frontend'
+    containers: 'cloud.canister.io:5000/alexheld/hde-frontend'
     multicontainerConfigFile: 'docker-compose.prod.yml'
 
