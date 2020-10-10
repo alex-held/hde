@@ -1,11 +1,14 @@
 <router-outlet></router-outlet>
 
+
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+
   <!-- ########################################################################## -->
-  <!-- Header -->
-  <!-- ########################################################################## -->
+	<!-- Header -->
+	<!-- ########################################################################## -->
 		<header>
 			<!-- Logo -->
-			<div id="ud_logo"><a href="#Startseite"><img alt="logo" src="/assets/images/logo_image.JPG"/></a></div>
+			<div id="ud_logo"><a href="#home"><img alt="logo" src="/assets/images/logo_image.JPG"/></a></div>
 
 			<!-- Kontakt -->
 				<div id="ud_kontakt_icon">
@@ -16,19 +19,19 @@
 			<!-- Navigation -->
 				<nav>
 						<ul>
-								<li><a href="#Startseite">Startseite</a></li>
+								<li><a href="#home">Startseite</a></li>
 								<li><a href="#about-us">Über Uns</a></li>
-								<li><a href="#Kontakt">Kontakt</a></li>
+								<li><a href="#contact">Kontakt</a></li>
 						</ul>
 				</nav>
 
 		</header>
 
-  <!-- ########################################################################## -->
-  <!-- Startseite -->
-  <!-- ########################################################################## -->
+	<!-- ########################################################################## -->
+	<!-- Startseite -->
+	<!-- ########################################################################## -->
 
-		<section class="ud_page" id="Startseite">
+		<section class="ud_page section" id="home">
 
 				<!-- Headline -->
 				<div id="ud_intro">
@@ -43,11 +46,11 @@
 
 		</section>
 
-  <!-- ########################################################################## -->
-  <!-- Über Uns -->
-  <!-- ########################################################################## -->
+	<!-- ########################################################################## -->
+	<!-- Über Uns -->
+	<!-- ########################################################################## -->
 
-		<section class="ud_page" id="about-us">
+		<section class="ud_page section" id="about-us">
 
 			<!-- Headline -->
 			<h2>Über Uns</h2>
@@ -78,11 +81,11 @@
 		</section>
 
 
-  <!-- ########################################################################## -->
-  <!-- Kontakt -->
-  <!-- ########################################################################## -->
+	<!-- ########################################################################## -->
+	<!-- Kontakt -->
+	<!-- ########################################################################## -->
 
-		<section class="ud_page" id="Kontakt">
+		<section class="ud_page section" id="contact">
 
 				<!-- Headline -->
 				<h2>Kontakt</h2>
@@ -90,7 +93,6 @@
 
 			<!-- Content -->
 				<article class="ud_kontakt">
-
 
 					<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 						<p>
@@ -111,16 +113,6 @@
 						    <button type="submit" class="btn btn-success">Submit</button>
 					</form>
 
-
-					<!--			<form action="javascript: SubmitContactForm();" id="contact-form" name="contact-form">
-									<label for="name">Name</label>
-									<input id="name" name="name" required type="text"> </input>
-									<label for="mail">Mail</label>
-									<input id="mail" name="mail" required type="email"> </input>
-									<label for="message">Nachricht </label>
-									<input id="message" name="message" required type="text"> </input>
-									<button type="submit"/>
-								</form>-->
 						<ul>
 								<li><span class="icon-mail-alt"></span> <a href="">contact@held-der-elektrik.de</a></li>
 								<li><span class="icon-location"></span> Beispielstraße 1, Köln 50667</li>
@@ -153,3 +145,5 @@
 				</footer>
 
 		</section>
+
+</div>

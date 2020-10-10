@@ -5,6 +5,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {SharedModule} from './shared/shared.module';
+import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 
 @NgModule ({
 	declarations: [
@@ -16,7 +17,8 @@ import {SharedModule} from './shared/shared.module';
 		BrowserModule,
 		FormsModule,
 		ReactiveFormsModule,
-		SharedModule
+		SharedModule,
+		AngularFullpageModule
 	],
 	providers: [FormBuilder],
 	bootstrap: [AppComponent]

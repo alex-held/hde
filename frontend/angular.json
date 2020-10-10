@@ -30,6 +30,7 @@
 							"src/favicon.ico"
 						],
 						"styles": [
+							"src/main.css",
 							"src/styles.sass"
 						],
 						"scripts": []
