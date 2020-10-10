@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+
+  server:
+    ports:
+      - "8000:8000"
+    image: cloud.canister.io:5000/alexheld/hde-server
+    build:
+      context: server
+      dockerfile: Dockerfile
+
+  frontend:
+    image: cloud.canister.io:5000/alexheld/hde-frontend
+    ports:
+    - "80:80"
+    build:
+      context: frontend
+      dockerfile: Dockerfile
