@@ -1,19 +1,13 @@
+"use strict";
 // Karma configuration
 // Generated on Sun Oct 11 2020 03:43:29 GMT+0200 (Central European Summer Time)
-
-module.exports = function(config) {
+module.exports = function (config) {
     config.set({
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: "",
-
+        basePath: '',
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ["jasmine", "karma-typescript"],
-
-        include: ["**/*.ts"],
-
-        exclude: ["node_modules", "**/*.js"],
-
+        frameworks: ['jasmine', "karma-typescript"],
         // list of files / patterns to exclude
         // exclude: [
         // 	'./node_modules'
@@ -36,55 +30,46 @@ module.exports = function(config) {
         // 	'*.ts',
         // 	'*.js'
         // ],
-
         // optionally, configure the reporter
         coverageReporter: {
-            type: "html",
-            dir: "coverage/",
+            type: 'html',
+            dir: 'coverage/'
         },
-
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ["progress", "dots", "coverage"],
-
+        reporters: ['progress', "dots", 'coverage'],
         // web server port
         port: 9876,
-
         // enable / disable colors in the output (reporters and logs)
         colors: true,
-
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_DEBUG,
-
+        logLevel: config.LOG_INFO,
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: true,
-
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-
-        browsers: ["Chrome", "ChromeHeadless"],
+        browsers: ['ChromeHeadless'],
         karmaTypescriptConfig: {
             compilerOptions: {
                 allowJs: true,
             },
+            exclude: ["node_modules"]
         },
-
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: false,
-
         // Concurrency level
         // how many browser should be started simultaneous
         concurrency: Infinity,
-
         plugins: [
-            "karma-jasmine",
+            'karma-jasmine',
+            'karma-chrome-launcher',
+            'karma-typescript',
             "karma-chrome-launcher",
-            "karma-typescript",
-            "karma-chrome-launcher",
-            "karma-coverage",
-        ],
+            "karma-coverage"
+        ]
     });
 };
+//# sourceMappingURL=karma.conf.js.map
