@@ -1,53 +1,61 @@
 {
-	"author": "contact@alexheld.io",
-	"dependencies": {
-		"core-js": "^3.6.5",
-		"fullpage.js": "^3.0.9",
-		"primeflex": "^2.0.0",
-		"primeicons": "^4.0.0",
-		"rxjs": "~6.6.0",
-		"serve": "^11.3.2",
-		"tslib": "^2.0.0",
-		"watch": "^1.0.2",
-		"zone.js": "~0.10.3"
+  "author": "contact@alexheld.io",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "fullpage.js": "^3.0.9",
+    "primeflex": "^2.0.0",
+    "primeicons": "^4.0.0",
+    "rxjs": "~6.6.0",
+    "serve": "^11.3.2",
+    "tslib": "^2.0.0",
+    "watch": "^1.0.2",
+    "zone.js": "~0.10.3"
+  },
+  "description": "This is the code of the website I created for my uncle's business. He is an electrician in Cologne, so i hope this website will reflect the future.",
+  "devDependencies": {
+    "@types/node": "^14.11.2",
+    "husky": "^4.3.0",
+    "protractor": "^7.0.0",
+    "semantic-release": "^17.1.2",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.2"
+  },
+  "displayName": "held-der-elektrik.de",
+  "homepage": "http://held-der-elektrik.de",
+  "maintainers": [
+    "alex-held"
+  ],
+  "name": "@alexheld/hde",
+  "private": false,
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alex-held/hde.git"
+  },
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm test",
+			"pre-push": "npm test",
+			"commit-msg": "devmoji -e --lint"
+		}
 	},
-	"description": "This is the code of the website I created for my uncle's business. He is an electrician in Cologne, so i hope this website will reflect the future.",
-	"devDependencies": {
-		"@types/node": "^14.11.2",
-		"protractor": "^7.0.0",
-		"ts-node": "~8.3.0",
-		"tslint": "~6.1.0",
-		"typescript": "~4.0.2"
-	},
-	"displayName": "held-der-elektrik.de",
-	"homepage": "http://held-der-elektrik.de",
-	"maintainers": [
-		"alex-held"
-	],
-	"name": "@alexheld/hde",
-	"private": false,
-	"readme": "README.md",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/alex-held/hde.git"
-	},
-	"scripts": {
-		"ng": "ng",
-		"start": "npm run start:all",
-		"start:all": "scripts/serve.sh",
-		"start:backend": "scripts/gin-serve.sh",
-		"start:frontend": "ng serve --open",
-		"build": "ng build",
-		"test": "ng test --code-coverage",
-		"test:watch": "ng test --code-coverage --watch=true",
-		"test:app:watch": "ng test hde --watch=true",
-		"lint": "ng lint --fix",
-		"e2e": "ng e2e",
-		"update:all": "npm run update:frontend && npm run update:backend",
-		"update:frontend": "ng update --force --all",
-		"update:backend": "GO111MODULE=auto go get -u ./server/...",
-		"install:all": "npm install && npm run install:backend && npm run update:backend",
-		"install:backend": "cd ~/source && GO111MODULE=on go get github.com/codegangsta/gin"
-	},
-	"version": "0.1.0"
+  "scripts": {
+    "start": "npm run - start:all",
+    "start:all": "scripts/serve.sh",
+    "start:backend": "scripts/gin-serve.sh",
+    "start:frontend": "ng serve --open",
+    "build": "ng build",
+    "test": "karma run",
+    "test:watch": "ng test --code-coverage --watch=true",
+    "test:app:watch": "ng test hde --watch=true",
+    "lint": "ng lint --fix",
+    "e2e": "ng e2e",
+    "update:all": "npm run update:frontend && npm run update:backend",
+    "update:frontend": "ng update --force --all",
+    "update:backend": "GO111MODULE=auto go get -u ./server/...",
+    "install:all": "npm install && npm run install:backend && npm run update:backend",
+    "install:backend": "cd ~/source && GO111MODULE=on go get github.com/codegangsta/gin"
+  },
+  "version": "0.0.0-development"
 }

@@ -1,7 +1,4 @@
 {
-	"cli": {
-		"analytics": false
-	},
 	"defaultProject": "hde",
 	"newProjectRoot": "src",
 	"projects": {
@@ -76,6 +73,7 @@
 						"main": "src/test.ts",
 						"polyfills": "src/polyfills.ts",
 						"tsConfig": "tsconfig.spec.json",
+						"karmaConfig": "karma.conf.js",
 						"assets": [
 							"src/assets",
 							"src/favicon.ico"
@@ -103,5 +101,8 @@
 			}
 		}
 	},
-	"version": 1
+	"version": 1,
+	"cli": {
+		"analytics": false
+	}
 }
