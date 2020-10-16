@@ -1,134 +1,114 @@
 <router-outlet></router-outlet>
 
 
+<!-- ########################################################################## -->
+<!-- Header -->
+<!-- ########################################################################## -->
+<app-header></app-header>
 
-  <!-- ########################################################################## -->
-	<!-- Header -->
-	<!-- ########################################################################## -->
-		<header>
-			<!-- Logo -->
-			<div id="ud_logo"><a href="#home"><img alt="logo" src="/assets/images/logo_image.JPG"/></a></div>
 
-			<!-- Kontakt -->
-				<div id="ud_kontakt_icon">
-						<div class="ud_kontakt_icon"><span class="icon-mail-alt"></span></div>
-						<div class="ud_kontakt_icon"><span class="icon-location"></span></div>
-				</div>
 
-			<!-- Navigation -->
-				<nav>
-						<ul id="menu">
-								<li data-menuanchor="home"><a href="#home">Startseite</a></li>
-								<li data-menuanchor="about-us"><a href="#about-us">Über Uns</a></li>
-								<li data-menuanchor="contact"><a href="#contact">Kontakt</a></li>
+<!-- ########################################################################## -->
+<!-- Content -->
+<!-- ########################################################################## -->
+
+<section class="ud_page" id="home">
+
+		<!-- Headline -->
+		<div id="ud_intro">
+
+				<h2>Ihr Partner<br>für Elektrotechnik</h2>
+				<div class="ud_h2_balken"></div>
+
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+
+				<a class="ud_button" href="">Weiter</a>
+		</div>
+
+</section>
+
+<!-- ########################################################################## -->
+<!-- Über Uns -->
+<!-- ########################################################################## -->
+
+<section class="ud_page" id="about-us">
+
+	<!-- Headline -->
+	<h2>Über Uns</h2>
+	<div class="ud_h2_balken"></div>
+
+	<!-- Content -->
+		<article class="ud_UberUns">
+				<article>
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+								sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
+
+						<p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+								ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+								takimata sanctus est Lorem ipsum dolor sit amet. </p>
+
+						<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore
+								te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+
+				</article>
+		</article>
+
+		<article class="ud_UberUns ud_motto_bg">
+				<article>
+						<div class="ud_motto">"Die Kunst hat das Handwerk nötiger als das Handwerk die Kunst."</div>
+				</article>
+		</article>
+
+</section>
+
+
+<!-- ########################################################################## -->
+<!-- Kontakt -->
+<!-- ########################################################################## -->
+
+<section class="ud_page" id="contact">
+
+	<!-- Headline -->
+	<h2>Kontakt</h2>
+	<div class="ud_h2_balken"></div>
+
+	<!-- Content -->
+		<article class="ud_kontakt">
+
+			<!-- Contact Form -->
+			<app-contact-form>
+
+
+				<ul>
+						<li><span class="icon-mail-alt"></span> <a href="">contact@held-der-elektrik.de</a></li>
+						<li><span class="icon-location"></span> Beispielstraße 1, Köln 50667</li>
+						<li><span class="icon-phone"></span> 0221 / 12 34 56</li>
+				</ul>
+			</app-contact-form>
+		</article>
+
+	<!-- Footer -->
+		<footer>
+
+			<!-- Metanavigation -->
+				<nav id="ud_meta_nav">
+						<ul>
+								<a href="">
+										<li>Impressum</li>
+								</a>
+								<a href="">
+										<li>Datenschutz</li>
+								</a>
+								<a href="">
+										<li>Haftungsausschluss</li>
+								</a>
 						</ul>
 				</nav>
 
-		</header>
+			<!-- Metanavigation -->
+				<div id="ud_copyright">Design by    <a href="mailto://contact@alexheld.io">Alexander Held</a> <a
+					href="https://github.com/alex-held">Alexander Held<</a></div>
 
+		</footer>
 
-<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)" #fullpageRef>
-	<!-- ########################################################################## -->
-	<!-- Startseite -->
-	<!-- ########################################################################## -->
-		<section class="ud_page section fp-auto-height-responsive" id="home">
-
-				<!-- Headline -->
-				<div id="ud_intro">
-
-						<h2>Ihr Partner<br>für Elektrotechnik</h2>
-						<div class="ud_h2_balken"></div>
-
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
-
-						<a class="ud_button" href="">Weiter</a>
-				</div>
-
-		</section>
-
-	<!-- ########################################################################## -->
-	<!-- Über Uns -->
-	<!-- ########################################################################## -->
-
-		<section class="ud_page section fp-auto-height-responsive" id="about-us">
-
-			<!-- Headline -->
-			<h2>Über Uns</h2>
-			<div class="ud_h2_balken"></div>
-
-			<!-- Content -->
-				<article class="ud_UberUns">
-						<article>
-								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-										sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
-
-								<p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-										ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-										takimata sanctus est Lorem ipsum dolor sit amet. </p>
-
-								<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore
-										te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-
-						</article>
-				</article>
-
-				<article class="ud_UberUns ud_motto_bg">
-						<article>
-								<div class="ud_motto">"Die Kunst hat das Handwerk nötiger als das Handwerk die Kunst."</div>
-						</article>
-				</article>
-
-		</section>
-
-
-	<!-- ########################################################################## -->
-	<!-- Kontakt -->
-	<!-- ########################################################################## -->
-
-		<section class="ud_page section  fp-auto-height-responsive" id="contact">
-
-				<!-- Headline -->
-				<h2>Kontakt</h2>
-				<div class="ud_h2_balken"></div>
-
-			<!-- Content -->
-				<article class="ud_kontakt">
-
-					<app-contact-form>
-
-					</app-contact-form>
-
-						<ul>
-								<li><span class="icon-mail-alt"></span> <a href="">contact@held-der-elektrik.de</a></li>
-								<li><span class="icon-location"></span> Beispielstraße 1, Köln 50667</li>
-								<li><span class="icon-phone"></span> 0221 / 12 34 56</li>
-						</ul>
-				</article>
-
-			<!-- Footer -->
-				<footer>
-
-					<!-- Metanavigation -->
-						<nav id="ud_meta_nav">
-								<ul>
-										<a href="">
-												<li>Impressum</li>
-										</a>
-										<a href="">
-												<li>Datenschutz</li>
-										</a>
-										<a href="">
-												<li>Haftungsausschluss</li>
-										</a>
-								</ul>
-						</nav>
-
-					<!-- Metanavigation -->
-						<div id="ud_copyright">Design by    <a href="mailto://contact@alexheld.io">Alexander Held</a> <a
-								href="https://github.com/alex-held">Alexander Held<</a></div>
-
-				</footer>
-
-		</section>
-
-</div>
+</section>

@@ -1,18 +1,16 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-	<p>
-	  <label for="name">Name:</label>
-	  <input type="text" formControlName="name" name="name" class="form-control">
-	</p>
 
-	<p>
-	  <label for="mail">Mail:</label>
-	  <input type="text" id="mail" name="mail" formControlName="mail" class="form-control">
-	</p>
+		<label class="form-control"><span>Name:</span>
+			<input type="text" formControlName="name"/>
+		</label>
 
-	<p>
-	  <label for="message">Message:</label>
-	  <input type="text" id="message" name="message" formControlName="message" class="form-control">
-	</p>
+		<label class="form-control" [(ngModel)]="emailValue"><span>Mail:</span>
+			<input type="email" formControlName="mail"/>
+		</label>
 
-	<button type="submit" class="btn btn-success">Submit</button>
+		<label class="form-control"><span>Message:</span>
+				<input type="text" formControlName="message"/>
+		</label>
+
+		<button type="submit" [disabled]="!contactForm.valid">Kontakt aufnehmen"</button>
 </form>

@@ -12,27 +12,13 @@ export class AppComponent implements OnInit {
 
 	contactForm!: FormGroup;
 
-	config: any;
-	fullpage_api: any;
 
 	constructor (private fb: FormBuilder, private contactService: ContactService) {
-		this.config = {
-			anchors: ['home', 'about-us', 'contact'],
-			menu: '#menu',
-			navigation: true
-		}
 	}
 
-	getRef(fullPageRef: any) {
-		this.fullpage_api = fullPageRef;
-	}
 
 	ngOnInit (): void {
 		this.contactForm = this.createForm ();
-	}
-
-	getContactData (): FormGroup {
-		return this.contactForm;
 	}
 
 	onSubmit () {

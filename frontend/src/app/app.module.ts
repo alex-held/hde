@@ -5,13 +5,14 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {SharedModule} from './shared/shared.module';
-import { AngularFullpageModule } from '@fullpage/angular-fullpage';
-import { ContactComponent } from './contact/contact.component';
+import {ContactComponent} from './contact/contact.component';
+import {HeaderComponent} from './header/header.component';
 
 @NgModule ({
 	declarations: [
 		AppComponent,
-		ContactComponent
+		ContactComponent,
+		HeaderComponent
 	],
 	imports: [
 		AppRoutingModule,
@@ -19,8 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 		BrowserModule,
 		FormsModule,
 		ReactiveFormsModule,
-		SharedModule,
-		AngularFullpageModule
+		SharedModule
 	],
 	providers: [FormBuilder],
 	bootstrap: [AppComponent]

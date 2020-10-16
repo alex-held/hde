@@ -2,7 +2,6 @@
   "author": "contact@alexheld.io",
   "dependencies": {
     "core-js": "^3.6.5",
-    "fullpage.js": "^3.0.9",
     "primeflex": "^2.0.0",
     "primeicons": "^4.0.0",
     "rxjs": "~6.6.0",
@@ -33,11 +32,11 @@
     "type": "git",
     "url": "https://github.com/alex-held/hde.git"
   },
-	"husky": {
-		"hooks": {
-			"commit-msg": "devmoji -e --lint"
-		}
-	},
+  "husky": {
+    "hooks": {
+      "commit-msg": "devmoji -e --lint"
+    }
+  },
   "scripts": {
     "start": "npm run - start:all",
     "start:all": "scripts/serve.sh",
