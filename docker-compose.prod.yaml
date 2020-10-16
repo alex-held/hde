@@ -8,16 +8,12 @@ services:
             - prod.env
         ports:
             - "8000:8000"
-        build:
-            target: prod
 
 
     frontend:
         env_file:
-            - prod.env
             - .env
+            - prod.env
         image: "alexheld/hde-frontend:${FRONTEND_TAG}"
         ports:
             - "80:80"
-        build:
-            target: prod
