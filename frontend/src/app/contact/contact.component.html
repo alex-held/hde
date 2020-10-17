@@ -33,9 +33,18 @@
 				</mat-error>
 			</mat-form-field>
 
+
 			<mat-form-field>
 				<mat-label>Message</mat-label>
-				<input matInput type="text" formControlName="message"/>
+
+				<textarea matInput
+						  cdkTextareaAutosize
+						  #autosize="cdkTextareaAutosize"
+						  cdkAutosizeMinRows="2"
+						  cdkAutosizeMaxRows="5"
+						  formControlName="message"
+				></textarea>
+
 				<mat-error *ngIf="contactForm.get('message').hasError('required')">
 					Message is <strong>required</strong>
 				</mat-error>
@@ -55,23 +64,12 @@
 
 
 	<div class="footer-area">
-		<div class="contact-data">
-			<h4>Kontaktdaten</h4>
-			<p>
-				Sie können uns während unserer Bürozeiten von Montag bis Freitag von 08:00 - 12:00 Uhr erreichen.
-			</p>
-		</div>
-
+		<app-info-label title="Adresse" value="Musterstraße 14, 59659 Köln Pesch" icon="business" ></app-info-label>
+		<app-info-label title="Telefon" value="0221/353151" icon="call" ></app-info-label>
+		<app-info-label title="Email" value="kontakt@held-der-elektrik.de" icon="contact_mail" ></app-info-label>
 	</div>
 
 </div>
-
-
-<p-dialog header="Kontakt" [modal]="true" [(visible)]="displayDialog" [baseZIndex]="10000"
-		  [draggable]="false" [resizable]="false" class="contact-form-modal">
-
-
-</p-dialog>
 
 
 

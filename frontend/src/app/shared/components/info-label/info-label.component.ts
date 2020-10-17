@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
-@Component({
-  selector: 'app-info-label',
-  templateUrl: './info-label.component.html',
-  styleUrls: ['./info-label.component.sass']
+@Component ({
+	selector: 'app-info-label',
+	templateUrl: './info-label.component.html',
+	styleUrls: ['./info-label.component.sass']
 })
 export class InfoLabelComponent implements OnInit {
 
-  constructor() { }
+	@Input ()
+	title: string = "Title"
 
-  ngOnInit(): void {
-  }
+	@Input ()
+	icon: string = "home"
+
+	@Input ()
+	value: string = "Value"
+
+	constructor () {
+	}
+
+	ngOnInit (): void {
+	}
 
 }

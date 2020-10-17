@@ -16,7 +16,6 @@ import {ContactService} from '../shared/services/contact.service'
 })
 export class ContactComponent implements OnInit {
 
-	displayDialog: boolean = false;
 	submitStatus: boolean = false;
 	contactForm!: FormGroup;
 
@@ -24,9 +23,6 @@ export class ContactComponent implements OnInit {
 	longitude: number = 6.873414;
 	zoom: number = 18;
 	label: string = 'Held der Elektrik';
-
-
-	overlays: any[] = [];
 
 	constructor (private contactService: ContactService) {}
 
@@ -43,16 +39,11 @@ export class ContactComponent implements OnInit {
 		this.contactForm = ContactComponent.createForm ();
 	}
 
-	onDisplayDialog (): void {
-		this.displayDialog = true;
-	}
-
 	onSubmit () {
 		this.contactService.submitContactForm (this.contactForm.value).subscribe ({
 			next: res => {
 				console.info ("success:  " + JSON.stringify (res))
 				this.submitStatus = true;
-				this.displayDialog = false;
 			},
 			error: err => alert ("ERROR:  " + JSON.stringify (err))
 		});
