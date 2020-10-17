@@ -1,14 +1,14 @@
 <div class="container">
 
-	<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-		<agm-marker [latitude]="latitude" [longitude]="longitude" [label]="label"></agm-marker>
-	</agm-map>
-
 
 	<div class="contact-header">
 		<p>Wir freuen uns über Ihren Anruf oder über Ihre Nachricht hier über das Kontaktformular.</p>
 	</div>
 
+
+	<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+		<agm-marker [latitude]="latitude" [longitude]="longitude" [label]="label"></agm-marker>
+	</agm-map>
 
 
 		<form class="contact-form-area" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
@@ -64,9 +64,9 @@
 
 
 	<div class="footer-area">
-		<app-info-label title="Adresse" value="Musterstraße 14, 59659 Köln Pesch" icon="business" ></app-info-label>
-		<app-info-label title="Telefon" value="0221/353151" icon="call" ></app-info-label>
-		<app-info-label title="Email" value="kontakt@held-der-elektrik.de" icon="contact_mail" ></app-info-label>
+		<app-info-label title="Adresse" value="Musterstraße 14, 59659 Köln Pesch" icon="business"></app-info-label>
+		<app-info-label title="Telefon" value="0221/353151" icon="call"></app-info-label>
+		<app-info-label title="Email" value="kontakt@held-der-elektrik.de" icon="contact_mail"></app-info-label>
 	</div>
 
 </div>

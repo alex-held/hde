@@ -1,40 +1,33 @@
-import {HttpClientModule, HttpClientJsonpModule} from '@angular/common/http';
-import {NgModule} from '@angular/core';
-import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule, HttpClientJsonpModule } from "@angular/common/http";
+import { NgModule } from "@angular/core";
+import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {SharedModule} from './shared/shared.module';
-import {ContactComponent} from './contact/contact.component';
-import {HeaderComponent} from './header/header.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { SharedModule } from "./shared/shared.module";
+import { ContactComponent } from "./contact/contact.component";
+import { HeaderComponent } from "./header/header.component";
 
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule } from "@agm/core";
 
-@NgModule ({
-	declarations: [
-		AppComponent,
-		ContactComponent,
-		HeaderComponent
-	],
-	imports: [
-		BrowserModule,
-		BrowserAnimationsModule,
-		AppRoutingModule,
-		AgmCoreModule.forRoot({
-			apiKey: 'AIzaSyDYTtXxhK0OagXKn4aeUrWoW6ZAb4bhekA'
-		}),
-		HttpClientModule,
-		HttpClientJsonpModule,
-		FormsModule,
-		ReactiveFormsModule,
-		SharedModule
-	],
-	providers: [FormBuilder],
-	bootstrap: [AppComponent]
+@NgModule({
+  declarations: [AppComponent, ContactComponent, HeaderComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyDYTtXxhK0OagXKn4aeUrWoW6ZAb4bhekA"
+    }),
+    HttpClientModule,
+    HttpClientJsonpModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
+  ],
+  providers: [FormBuilder],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
-
-
+export class AppModule {}
