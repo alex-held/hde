@@ -22,13 +22,9 @@ export class ContactComponent implements OnInit {
 
 	latitude: number = 51.005612;
 	longitude: number = 6.873414;
-	options: any = {
-		center: {
-			lat: this.latitude,
-			lng: this.longitude
-		},
-		zoom: 18
-	};
+	zoom: number = 18;
+	label: string = 'Held der Elektrik';
+
 
 	overlays: any[] = [];
 
@@ -44,20 +40,6 @@ export class ContactComponent implements OnInit {
 	}
 
 	ngOnInit (): void {
-
-
-		this.overlays = [
-			//@ts-ignore
-			{
-				position: {
-					lat: 51.005612,
-					lng: 6.873414
-				},
-				title: 'Held der Elektrik',
-				label: 'Held der Elektrik',
-				clickable: true,
-			}
-		];
 		this.contactForm = ContactComponent.createForm ();
 	}
 

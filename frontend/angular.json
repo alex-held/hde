@@ -27,7 +27,7 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+				"src/app/shared/styles/electro-theme.scss",
               "src/styles.sass",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",

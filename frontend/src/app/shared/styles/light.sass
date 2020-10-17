@@ -1,0 +1,13 @@
+@import ~@angular/material/theming
+
+@include mat-core
+
+
+
+// Define the default theme (same as the example above).
+$hde-app-primary: mat-palette($mat-amber)
+$hde-app-accent:  mat-palette($mat-pink, A200, A100, A400)
+$hde-app-theme:   mat-light-theme((color:(primary: $hde-app-primary,accent: $hde-app-accent)))
+
+
+@include angular-material-theme($hde-app-theme)
