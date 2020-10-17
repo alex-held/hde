@@ -1,17 +1,11 @@
-<page name="home">
+<carousel>
 
+  <slide *ngFor="let banner of banners; let index=index">
+	    <img alt="first slide" [src]="banner.imgUrl" >
+	    <div class="carousel-caption  py-5  justify-content-center">
+		  <h4 class="text-center text-justify text-xl-center ">{{banner.name}}</h4>
+		  <p>{{banner.description}}</p>
+		</div>
+  </slide>
 
-	<h1 class="mat-display-1">
-		Ihr Ansprechpartner für Elektrotechnik
-	</h1>
-
-	<p-galleria [value]="images" showThumbnails="false" numVisible="1" autoPlay="true" baseZIndex="1000" >
- 		 <ng-template let-item pTemplate="item">
-
-                <img [src]="item.thumbnailImageSrc" style="width: 100%;"/>
-            </ng-template>
-
-	</p-galleria>
-
-
-</page>
+</carousel>

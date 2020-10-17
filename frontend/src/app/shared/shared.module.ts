@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { FlexLayoutModule, FlexModule } from "@angular/flex-layout";
+import { CarouselModule } from "ngx-bootstrap/carousel";
 import { MaterialModule } from "src/app/shared/modules/material.module";
 import { PrimeModule } from "src/app/shared/modules/prime.module";
 import { ContactService } from "./services/contact.service";
@@ -16,9 +17,16 @@ import { BannerComponent } from "./components/banner/banner.component";
     PageComponent,
     ServiceCardComponent,
     ServiceCardGridComponent,
+    BannerComponent,
     BannerComponent
   ],
-  imports: [PrimeModule, MaterialModule, FlexLayoutModule, FlexModule],
+  imports: [
+    PrimeModule,
+    MaterialModule,
+    FlexLayoutModule,
+    FlexModule,
+    CarouselModule
+  ],
   exports: [
     PrimeModule,
     MaterialModule,
@@ -28,6 +36,7 @@ import { BannerComponent } from "./components/banner/banner.component";
     FlexModule,
     FlexLayoutModule,
     ServiceCardGridComponent,
+    BannerComponent,
     BannerComponent
   ],
   providers: [ContactService]
