@@ -3,7 +3,7 @@ package server
 import (
 	"fmt"
 	"net/http"
-	
+
 	"github.com/gin-gonic/gin"
 	"github.com/rs/cors"
 )
@@ -47,8 +47,8 @@ func (s *serverBuilder) Build() *http.Server {
 		name :=	c.Param("name")
 		c.String(200, fmt.Sprintf("Hello, %s!\nHow are you/s", name))
 	})
-	
-	
+
+
 	var handler http.Handler = r
 
 	for _, handlerWrapper := range s.handlers {

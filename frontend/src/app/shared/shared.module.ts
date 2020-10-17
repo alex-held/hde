@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { FlexLayoutModule, FlexModule } from "@angular/flex-layout";
-import { GoogleMapsModule } from "@angular/google-maps";
 import { MaterialModule } from "src/app/shared/modules/material.module";
 import { PrimeModule } from "src/app/shared/modules/prime.module";
 import { ContactService } from "./services/contact.service";
@@ -19,13 +18,7 @@ import { BannerComponent } from "./components/banner/banner.component";
     ServiceCardGridComponent,
     BannerComponent
   ],
-  imports: [
-    PrimeModule,
-    MaterialModule,
-    GoogleMapsModule,
-    FlexLayoutModule,
-    FlexModule
-  ],
+  imports: [PrimeModule, MaterialModule, FlexLayoutModule, FlexModule],
   exports: [
     PrimeModule,
     MaterialModule,
