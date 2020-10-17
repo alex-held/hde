@@ -18,7 +18,8 @@
 		"module": "es2020",
 		"pretty": true,
 		"typeRoots": ["node_modules/@types"],
-		"lib": ["es2018", "dom"]
+		"lib": ["es2018", "dom"],
+		"types": ["googlemaps"]
 	},
 	"angularCompilerOptions": {
 		"strictInjectionParameters": true,

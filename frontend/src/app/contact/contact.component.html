@@ -1,16 +1,77 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+<div class="container">
 
-		<label class="form-control"><span>Name:</span>
-			<input type="text" formControlName="name"/>
-		</label>
+	<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="18">
+		<agm-marker [latitude]="latitude" [longitude]="longitude">Held der Elektrik</agm-marker>
+	</agm-map>
 
-		<label class="form-control" [(ngModel)]="emailValue"><span>Mail:</span>
-			<input type="email" formControlName="mail"/>
-		</label>
 
-		<label class="form-control"><span>Message:</span>
-				<input type="text" formControlName="message"/>
-		</label>
+	<div class="contact-header">
+		<p>Wir freuen uns über Ihren Anruf oder über Ihre Nachricht hier über das Kontaktformular.</p>
+	</div>
 
-		<button type="submit" [disabled]="!contactForm.valid">Kontakt aufnehmen"</button>
-</form>
+
+
+		<form class="contact-form-area" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+			<mat-form-field>
+				<mat-label>Name</mat-label>
+				<input matInput type="text" formControlName="name"/>
+				<mat-error *ngIf="contactForm.get('name').hasError('required')">
+					Name is <strong>required</strong>
+        		</mat-error>
+			</mat-form-field>
+
+
+			<mat-form-field>
+				<mat-label>Email</mat-label>
+				<input matInput type="email" formControlName="mail"/>
+				 <mat-error *ngIf="contactForm.get('mail').hasError('email') && !contactForm.get('mail').hasError('required')">
+					   Please enter a valid email address
+				</mat-error>
+				<mat-error *ngIf="contactForm.get('mail').hasError('required')">
+					Email is <strong>required</strong>
+				</mat-error>
+			</mat-form-field>
+
+			<mat-form-field>
+				<mat-label>Message</mat-label>
+				<input matInput type="text" formControlName="message"/>
+				<mat-error *ngIf="contactForm.get('message').hasError('required')">
+					Message is <strong>required</strong>
+				</mat-error>
+			</mat-form-field>
+
+			<button
+				mat-flat-button
+				color="primary"
+				type="submit"
+				[disabled]="!contactForm.valid">Kontakt aufnehmen"
+			</button>
+
+			 <ng-template [ngIf]="submitStatus">
+        		<span>Ein Mitarbeiter wird sich umgehend bei Ihnen melden!</span>
+      		</ng-template>
+		</form>
+
+
+	<div class="footer-area">
+		<div class="contact-data">
+			<h4>Kontaktdaten</h4>
+			<p>
+				Sie können uns während unserer Bürozeiten von Montag bis Freitag von 08:00 - 12:00 Uhr erreichen.
+			</p>
+		</div>
+
+	</div>
+
+</div>
+
+
+<p-dialog header="Kontakt" [modal]="true" [(visible)]="displayDialog" [baseZIndex]="10000"
+		  [draggable]="false" [resizable]="false" class="contact-form-modal">
+
+
+</p-dialog>
+
+
+

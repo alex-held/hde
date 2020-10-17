@@ -1,4 +1,46 @@
 
+.container
+	padding: 20px
+	margin: 5px 20px 5px 20px
+	height: 800px
+	width: 90%
+	display: grid
+	grid-template-columns: 50% 50%
+	grid-template-rows:  70% 30%
+	grid-template-areas: "map contact-form" "footer footer"
+	grid-gap: 2em
+
+
+agm-map
+	grid-area: map
+	height: 500px
+
+.footer-area
+	grid-area: footer
+
+.contact-header
+	p
+		font-family: Roboto Condensed, sans-serif
+		font-weight: 300
+		word-spacing: 3px
+		line-height: 15px
+		color: ghostwhite
+		text-align: justify
+
+.contact-form-area
+	grid-area: contact-form
+	display: flex
+	flex-direction: column
+	justify-content: space-around
+
+
+
+	.contact-data
+		display: flex
+		flex-direction: column
+
+
+
 form
 	border: black 15px
 	display: flex
@@ -7,3 +49,16 @@ form
 
 .form-control
 	padding: 2em 2em 2em 2em
+
+
+.contact-form-modal
+	width: 50vw
+
+.confirmation-content
+	display: flex
+	align-items: center
+	justify-content: center
+
+	p
+		margin: 0
+
