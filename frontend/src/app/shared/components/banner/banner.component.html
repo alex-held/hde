@@ -1,0 +1,13 @@
+<page name="home">
+
+
+	<p-galleria [value]="images" showThumbnails="false" numVisible="1" autoPlay="true" baseZIndex="1000" >
+ 		 <ng-template let-item pTemplate="item">
+
+                <img [src]="item.thumbnailImageSrc" style="width: 100%;"/>
+            </ng-template>
+
+	</p-galleria>
+
+
+</page>

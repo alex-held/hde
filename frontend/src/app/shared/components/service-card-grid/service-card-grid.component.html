@@ -1,0 +1,5 @@
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid" >
+	<div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let serviceOffering of serviceOfferings">
+		  <app-service-card [service]="serviceOffering"></app-service-card>
+	  </div>
+</div>

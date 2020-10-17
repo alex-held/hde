@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SectionComponent } from './section.component';
+import { ServiceCardGridComponent } from './service-card-grid.component';
 
-describe('SectionComponent', () => {
-  let component: SectionComponent;
-  let fixture: ComponentFixture<SectionComponent>;
+describe('ServiceCardGridComponent', () => {
+  let component: ServiceCardGridComponent;
+  let fixture: ComponentFixture<ServiceCardGridComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SectionComponent ]
+      declarations: [ ServiceCardGridComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SectionComponent);
+    fixture = TestBed.createComponent(ServiceCardGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
