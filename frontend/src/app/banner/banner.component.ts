@@ -1,10 +1,5 @@
-import {
-  Component,
-  EventEmitter,
-  HostBinding,
-  OnInit,
-  Output
-} from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+
 import { timer } from "rxjs";
 import { repeat } from "rxjs/operators";
 
@@ -27,34 +22,38 @@ export class BannerComponent implements OnInit {
 
   areas: string[] = ["top", "left", "center ", "right ", "bottom"];
 
+  getImageUrl(): string {
+    return this.banners[this.activeBanner].imgUrl;
+  }
+
   constructor() {
     this.banners = [
       {
         name: "Ihr Elektriker Meisterbetrieb mit langjähriger Erfahrung!",
         description:
           "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
-        imgUrl: "../../../../assets/images/banner-1.jpg",
+        imgUrl: "assets/images/banner-1.jpg",
         order: 1
       },
       {
         name: "Sicherungen",
         description:
           "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
-        imgUrl: "../../../../assets/images/banner-2.jpg",
+        imgUrl: "assets/images/banner-2.jpg",
         order: 2
       },
       {
         name: "Glasfaser",
         description:
           "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
-        imgUrl: "../../../../assets/images/banner-3.jpg",
+        imgUrl: "assets/images/banner-3.jpg",
         order: 3
       },
       {
         name: "Checkup",
         description:
           "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
-        imgUrl: "../../../../assets/images/banner-4.jpg",
+        imgUrl: "assets/images/banner-4.jpg",
         order: 4
       }
     ];
