@@ -9,7 +9,7 @@ import { InfoLabelComponent } from "./components/info-label/info-label.component
 import { PageComponent } from "./components/section/page.component";
 import { ServiceCardComponent } from "./components/service-card/service-card.component";
 import { ServiceCardGridComponent } from "./components/service-card-grid/service-card-grid.component";
-import { BannerComponent } from "./components/banner/banner.component";
+import { BannerComponent } from "../banner/banner.component";
 
 @NgModule({
   declarations: [

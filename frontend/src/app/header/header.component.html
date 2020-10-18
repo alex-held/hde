@@ -1,15 +1,17 @@
-<mat-toolbar color="primary"  fxLayout="row nowrap" fxLayoutAlign="end center">
+<mat-toolbar color="primary"
+			 fxLayout="row nowrap"
+			 fxLayout.xs="row wrap"
+			 fxLayoutAlign="flex-end center"
+>
 
-
-		<a href="#home" mat-icon-button>
+		<a href="{{sections[0].sectionHref}}" mat-icon-button>
 			<mat-icon class="logo" svgIcon="logo"></mat-icon>
-<!--						<span>{{title}}</span>-->
 		</a>
 
 		<span class="spacer"></span>
 
-		<div *ngFor="let section of sections">
-				<a href="{{section.sectionHref}}" mat-button>{{section.title}}</a>
-		</div>
+		<ng-container *ngFor="let section of sections">
+				<a color="accent" href="{{section.sectionHref}}" mat-button>{{section.title}}</a>
+		</ng-container>
 
 </mat-toolbar>

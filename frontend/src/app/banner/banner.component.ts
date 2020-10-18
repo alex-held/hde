@@ -25,14 +25,7 @@ export class BannerComponent implements OnInit {
   activeBanner: number = 0;
   banners: Banner[];
 
-  @HostBinding("style.height")
-  public height: string = "300px";
-
-  @HostBinding("style.width")
-  public width: string = "100%";
-
-  @HostBinding("style.display")
-  public display: string = "block";
+  areas: string[] = ["top", "left", "center ", "right ", "bottom"];
 
   constructor() {
     this.banners = [

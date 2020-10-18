@@ -1,4 +1,0 @@
-
-<ng-container class="banner-ng-container" name="banner" *ngFor="let banner of banners; let i=index" [(ngModel)]="activeBanner"  ngDefaultControl>
-	<img *ngIf="shouldBeVisible(banner.order)" [src]="banner.imgUrl" alt="banner-image" class="banner-image">
-</ng-container>
