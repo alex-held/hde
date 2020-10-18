@@ -1,6 +1,6 @@
-<section [id]="name">
+<section [id]="name" fxLayout="column" fxLayoutAlign="space-between stretch">
+	<mat-divider></mat-divider>
 	<h2>{{name}}</h2>
-	<p>Page Content</p>
 	<ng-content></ng-content>
 	<mat-divider></mat-divider>
 </section>

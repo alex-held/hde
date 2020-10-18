@@ -1,11 +1,4 @@
-<carousel>
 
-  <slide *ngFor="let banner of banners; let index=index">
-	    <img alt="first slide" [src]="banner.imgUrl" >
-	    <div class="carousel-caption  py-5  justify-content-center">
-		  <h4 class="text-center text-justify text-xl-center ">{{banner.name}}</h4>
-		  <p>{{banner.description}}</p>
-		</div>
-  </slide>
-
-</carousel>
+<ng-container class="banner-ng-container" name="banner" *ngFor="let banner of banners; let i=index" [(ngModel)]="activeBanner"  ngDefaultControl>
+	<img *ngIf="shouldBeVisible(banner.order)" [src]="banner.imgUrl" alt="banner-image" class="banner-image">
+</ng-container>

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-
+import {} from "jasmine";
 import { PageComponent } from "src/app/shared/components/section/page.component.js";
 
 describe("SectionComponent", () => {

@@ -1,75 +1,118 @@
-<div class="container">
+<div class="container" fxLayout="column" fxLayoutAlign="space-between stretch">
 
 
-	<div class="contact-header">
-		<p>Wir freuen uns über Ihren Anruf oder über Ihre Nachricht hier über das Kontaktformular.</p>
-	</div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-even stretch">
+    <app-info-label
+      icon="business"
+      title="Adresse"
+      value="Musterstraße 14, 59659 Köln Pesch"
+    ></app-info-label>
+    <app-info-label
+      icon="call"
+      title="Telefon"
+      value="0221/353151"
+    ></app-info-label>
+    <app-info-label
+      icon="contact_mail"
+      title="Email"
+      value="kontakt@held-der-elektrik.de"
+    ></app-info-label>
+  </div>
 
+  <mat-divider></mat-divider>
 
-	<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" [disableDefaultUI]="true" >
-		<agm-marker [latitude]="latitude" [longitude]="longitude" [label]="label"></agm-marker>
-	</agm-map>
+  <mat-divider [vertical]="true"></mat-divider>
 
+  <div fxLayout="row" fxLayoutAlign="space-between stretch" fxLayoutGap="10">
+    <agm-map
+      [disableDefaultUI]="true"
+      [latitude]="latitude"
+      [longitude]="longitude"
+      [zoom]="zoom"
+      fxFlex="70%"
+      style="height: 600px !important;"
+    >
+      <agm-marker
+        [label]="label"
+        [latitude]="latitude"
+        [longitude]="longitude"
+      ></agm-marker>
+    </agm-map>
 
-		<form class="contact-form-area" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <form
+      (ngSubmit)="onSubmit()"
+      [formGroup]="contactForm"
+      class="form-control"
+      fxFlex="25"
+	  fxLayout="column nowrap" fxLayoutAlign="space-evenly stretch"
+	>
+      <div fxLayout="row" fxLayoutAlign="center stretch">
+        <span class="mat-headline">
+          Wir freuen uns über Ihren Anruf oder über Ihre Nachricht hier über das
+          Kontaktformular.
+        </span>
+      </div>
 
-			<mat-form-field>
-				<mat-label>Name</mat-label>
-				<input matInput type="text" formControlName="name"/>
-				<mat-error *ngIf="contactForm.get('name').hasError('required')">
-					Name is <strong>required</strong>
-        		</mat-error>
-			</mat-form-field>
+      <mat-form-field fxLayout="column" fxLayoutAlign="space-between stretch">
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput type="text" />
+        <mat-error *ngIf="!contactForm.get('name').hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
 
+      <mat-form-field fxLayout="column" fxLayoutAlign="space-between stretch">
+        <mat-label>Email</mat-label>
+        <input formControlName="mail" matInput type="email" />
+        <mat-error
+          *ngIf="
+            contactForm.get('mail').hasError('email') &&
+            !contactForm.get('mail').hasError('required')
+          "
+        >
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="contactForm.get('mail').hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
 
-			<mat-form-field>
-				<mat-label>Email</mat-label>
-				<input matInput type="email" formControlName="mail"/>
-				 <mat-error *ngIf="contactForm.get('mail').hasError('email') && !contactForm.get('mail').hasError('required')">
-					   Please enter a valid email address
-				</mat-error>
-				<mat-error *ngIf="contactForm.get('mail').hasError('required')">
-					Email is <strong>required</strong>
-				</mat-error>
-			</mat-form-field>
+      <mat-form-field fxLayout="column" fxLayoutAlign="space-between stretch">
+        <mat-label>Message</mat-label>
+        <textarea
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMaxRows="10"
+          cdkAutosizeMinRows="1"
+          cdkTextareaAutosize
+          formControlName="message"
+          matInput
+        ></textarea>
 
+        <mat-error *ngIf="contactForm.get('message').hasError('required')">
+          Message is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
 
-			<mat-form-field>
-				<mat-label>Message</mat-label>
+      <button
+        [disabled]="!contactForm.valid"
+        color="primary"
+        fxLayout="column"
+        fxLayoutAlign="space-between stretch"
+        mat-flat-button
+        type="submit"
+      >
+        Kontakt aufnehmen"
+      </button>
 
-				<textarea matInput
-						  cdkTextareaAutosize
-						  #autosize="cdkTextareaAutosize"
-						  cdkAutosizeMinRows="2"
-						  cdkAutosizeMaxRows="5"
-						  formControlName="message"
-				></textarea>
+      <ng-template
+        [ngIf]="submitStatus"
+        fxLayout="column"
+        fxLayoutAlign="space-between stretch"
+      >
+        <span>Ein Mitarbeiter wird sich umgehend bei Ihnen melden!</span>
+      </ng-template>
+    </form>
+  </div>
 
-				<mat-error *ngIf="contactForm.get('message').hasError('required')">
-					Message is <strong>required</strong>
-				</mat-error>
-			</mat-form-field>
-
-			<button
-				mat-flat-button
-				color="primary"
-				type="submit"
-				[disabled]="!contactForm.valid">Kontakt aufnehmen"
-			</button>
-
-			 <ng-template [ngIf]="submitStatus">
-        		<span>Ein Mitarbeiter wird sich umgehend bei Ihnen melden!</span>
-      		</ng-template>
-		</form>
-
-
-	<div class="footer-area">
-		<app-info-label title="Adresse" value="Musterstraße 14, 59659 Köln Pesch" icon="business"></app-info-label>
-		<app-info-label title="Telefon" value="0221/353151" icon="call"></app-info-label>
-		<app-info-label title="Email" value="kontakt@held-der-elektrik.de" icon="contact_mail"></app-info-label>
-	</div>
-
+  <mat-divider></mat-divider>
 </div>
-
-
-

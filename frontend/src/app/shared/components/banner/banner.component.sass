@@ -1,20 +1,20 @@
-
-
-
-carousel
-	width: 80%
-	height: 600px
-
-
-img
+.banner-image:host
 	display: block
-	width: 80%
-	height: 600px
+	width: 100%
+	height: 250px
 
-	max-height: 600px !important
-	min-width: 100%
-	max-width: 100%
-	object-fit: cover
-	object-position: center
-	//  You can change this to bottom, right or left depending
-	// on the position you want.
+.banner-ng-container
+	display: block
+	width: 100%
+	height: 250px
+
+.banner-image::ng-deep:host-context
+	display: block
+	width: 100%
+	height: 250px
+
+
+banner:host
+	display: block
+	width: 100%
+	height: 400px

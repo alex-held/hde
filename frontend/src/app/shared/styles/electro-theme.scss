@@ -194,6 +194,7 @@ $mat-accent: (
 		darker: $light-primary-text,
 	)
 );
+
 $theme-accent: mat-palette($mat-accent, main, lighter, darker);
 
 body {

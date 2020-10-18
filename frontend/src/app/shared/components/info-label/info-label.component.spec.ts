@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import {} from "jasmine";
+import { InfoLabelComponent } from "./info-label.component";
 
-import { InfoLabelComponent } from './info-label.component';
-
-describe('InfoLabelComponent', () => {
+describe("InfoLabelComponent", () => {
   let component: InfoLabelComponent;
   let fixture: ComponentFixture<InfoLabelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InfoLabelComponent ]
-    })
-    .compileComponents();
+      declarations: [InfoLabelComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('InfoLabelComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

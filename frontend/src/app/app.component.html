@@ -1,29 +1,16 @@
-<!-- ########################################################################## -->
-<!-- Header -->
-<!-- ########################################################################## -->
-<app-header></app-header>
-
-<!-- ########################################################################## -->
-<!-- Content -->
-<!-- ########################################################################## -->
+<div fxLayout="column">
 
 
-	<banner></banner>
+<app-header fxLayout="row"></app-header>
+
+<banner fxLayout="row"></banner>
+
+<page fxLayout="row" name="services">
+	<app-service-card-grid></app-service-card-grid>
+</page>
 
 
-
-	<page name="services">
-		<app-service-card-grid></app-service-card-grid>
-	</page>
-
-
-
-
-
-<!-- ########################################################################## -->
-<!-- Über Uns -->
-<!-- ########################################################################## -->
-<section class="ud_page" id="about-us">
+<section class="ud_page" fxLayout="row" id="about-us">
   <!-- Headline -->
   <h2>Über Uns</h2>
   <div class="ud_h2_balken"></div>
@@ -102,34 +89,17 @@
   </article>
 </section>
 
-<!-- ########################################################################## -->
-<!-- Kontakt -->
-<!-- ########################################################################## -->
+	<!-- ########################################################################## -->
+	<!-- Kontakt -->
+	<!-- ########################################################################## -->
 
-<section class="ud_page" id="contact">
-  <!-- Headline -->
-  <h2>Kontakt</h2>
-  <div class="ud_h2_balken"></div>
-
-	<!-- Content -->
-  <article class="ud_kontakt">
-    <!-- Contact Form -->
-    <app-contact-form>
-      <ul>
-        <li>
-          <span class="icon-mail-alt"></span>
-          <a href="">contact@held-der-elektrik.de</a>
-        </li>
-        <li>
-          <span class="icon-location"></span> Beispielstraße 1, Köln 50667
-        </li>
-        <li><span class="icon-phone"></span> 0221 / 12 34 56</li>
-      </ul>
-    </app-contact-form>
-  </article>
+<page fxLayout="column" fxLayoutAlign="space-between stretch"  name="contact">
+	<!-- Contact Form -->
+    <app-contact-form fxLayout="row" fxLayoutAlign="space-between stretch" ></app-contact-form>
+</page>
 
 	<!-- Footer -->
-  <footer>
+  <footer fxLayout="row">
     <!-- Metanavigation -->
     <nav id="ud_meta_nav">
       <ul>
@@ -151,4 +121,6 @@
       <a href="https://github.com/alex-held">Alexander Held<</a>
     </div>
   </footer>
-</section>
+
+
+</div>

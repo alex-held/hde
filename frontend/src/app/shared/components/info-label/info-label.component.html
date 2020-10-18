@@ -1,7 +1,22 @@
 <mat-card class="info-card">
-	<mat-card-header>
-		<mat-icon mat-card-avatar>{{icon}}</mat-icon>
-		<mat-card-title>{{title}}</mat-card-title>
-		<mat-card-subtitle>{{value}}</mat-card-subtitle>
+	<mat-card-header
+		fxLayout="column-reverse"
+		fxLayoutAlign="space-between start">
+
+		<div fxLayout="row"
+			 fxFlexOrder="1"
+			 fxLayoutAlign="space-between stretch"
+			 fxLayoutGap="16px">
+			<mat-icon style="width: 20%;">{{icon}}</mat-icon>
+			<mat-card-title>{{title}}</mat-card-title>
+		</div>
+
+		<mat-card-subtitle
+			fxLayout="row"
+			fxFlexOrder="2"
+			fxLayoutAlign="start stretch"
+		fxFlexOffset="-16px">
+			{{value}}
+		</mat-card-subtitle>
 	</mat-card-header>
 </mat-card>
