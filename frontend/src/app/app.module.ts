@@ -10,9 +10,11 @@ import { SharedModule } from "./shared/shared.module";
 import { ContactComponent } from "./contact/contact.component";
 import { HeaderComponent } from "./header/header.component";
 import { AgmCoreModule } from "@agm/core";
+import { AboutUsComponent } from './about-us/about-us.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, ContactComponent, HeaderComponent],
+  declarations: [AppComponent, ContactComponent, HeaderComponent, AboutUsComponent, FooterComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
