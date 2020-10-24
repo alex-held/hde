@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { ServiceCardModel } from "src/app/shared/services/serviceCardModel";
 
 @Component({
   selector: "app-service-card",
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ["./service-card.component.sass"]
 })
 export class ServiceCardComponent implements OnInit {
-  @Input() service!: ServiceOffer;
+  @Input() service!: ServiceCardModel;
 
   constructor() {}
 

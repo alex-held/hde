@@ -3,16 +3,16 @@
 		  fxLayoutAlign="space-between stretch">
 
 	<mat-card-header fxLayout="column"
-					 fxLayoutAlign="space-between start">
+					 fxLayoutAlign="space-between start"
+						class="card-title">
 		<mat-card-title>{{service.title}}</mat-card-title>
-		<mat-card-subtitle *ngIf="service.subtitle != null">{{service.subtitle}}</mat-card-subtitle>
 	</mat-card-header>
 
 
 	<mat-card-content fxLayout="column"
 					  fxLayoutAlign="space-between start">
 		<img alt="image" mat-card-image src="{{service.url}}">
-		<p>{{service.long_description}}</p>
+		<p>{{service.subtitle}}</p>
 	</mat-card-content>
 
 	<mat-card-actions>

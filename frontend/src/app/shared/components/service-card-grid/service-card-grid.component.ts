@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { ServiceOffer } from "src/app/shared/components/service-card/service-card.component.js";
+import { ServiceOffer } from "src/app/shared/components/service-card/service-card.component";
+import { ServiceCardService } from "src/app/shared/services/service-card.service";
+import { ServiceCardModel } from "src/app/shared/services/serviceCardModel";
 
 @Component({
   selector: "app-service-card-grid",
@@ -7,6 +9,18 @@ import { ServiceOffer } from "src/app/shared/components/service-card/service-car
   styleUrls: ["./service-card-grid.component.sass"]
 })
 export class ServiceCardGridComponent implements OnInit {
+  services: ServiceCardModel[] = [];
+
+  constructor(private serviceCardService: ServiceCardService) {}
+
+  ngOnInit(): void {
+    this.serviceCardService.getServices().subscribe({
+      next: value => (this.services = value),
+      complete: () => console.log("loaded services"),
+      error: err => console.error(err)
+    });
+  }
+
   serviceOfferings: ServiceOffer[] = [
     {
       title: "Elektroinstallation",
@@ -59,8 +73,4 @@ export class ServiceCardGridComponent implements OnInit {
     }
   ];
   gridColumns: number = 3;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
