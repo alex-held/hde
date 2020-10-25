@@ -5,21 +5,23 @@
   title="Kontakt"
   class="container"
 >
-  <div fxLayout="row wrap" fxLayoutAlign="space-even stretch">
+  <div fxLayout="row wrap" fxLayoutAlign="space-around stretch">
     <app-info-label
       icon="business"
       title="Adresse"
-      value="Musterstraße 14, 59659 Köln Pesch"
+      [value]="['Im Gewerbegebiet Pesch 17, 50767 Köln']"
     ></app-info-label>
     <app-info-label
+      href="tel:+492219999"
       icon="call"
       title="Telefon"
-      value="0221/353151"
+      [value]="['0221/353151', '08:00 - 16:00 Uhr']"
     ></app-info-label>
     <app-info-label
+      href="mailto://kontakt@held-der-elektrik.de"
       icon="contact_mail"
       title="Email"
-      value="kontakt@held-der-elektrik.de"
+      [value]="['kontakt@held-der-elektrik.de']"
     ></app-info-label>
   </div>
 
