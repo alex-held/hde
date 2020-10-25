@@ -1,17 +1,30 @@
-<page
-  fxLayout="column"
-  fxLayoutAlign="space-evenly center"
-  fxFill
->
-  <mat-nav-list fxLayout="row" fxLayoutAlign="space-between stretch">
+<page fxLayout="column" fxLayoutAlign="space-between stretch">
+  <mat-nav-list fxLayout="row" fxLayoutAlign="center center">
     <a mat-list-item routerLink="/legal#companyinfo">Impressum</a>
-    <a mat-list-item routerLink="/legal#privacy">Datenschutz</a>
-    <a mat-list-item routerLink="/legal#disclaimer">Impressum</a>
+    <a
+      fxLayout="column"
+      fxLayoutAlign="space-evenly center"
+      mat-list-item
+      routerLink="/legal#privacy"
+      >Datenschutz</a
+    >
+    <a
+      fxLayout="column"
+      fxLayoutAlign="space-evenly center"
+      mat-list-item
+      routerLink="/legal#disclaimer"
+      >Impressum</a
+    >
   </mat-nav-list>
 
   <div fxLayout="column" fxLayoutAlign="space-evenly center">
-	  <p>Crafted with ❤️ by <a href="https://github.com/alex-held">Alexander Held</a></p>
-	  <p>Please <a href="mailto://contact@alexheld.io">Get in touch with me!</a></p>
-	  <p>© 2020 alexander held</p>
+    <p>
+      Crafted with ❤️ by
+      <a href="https://github.com/alex-held">Alexander Held</a>
+    </p>
+    <p>
+      Please <a href="mailto://contact@alexheld.io">Get in touch with me!</a>
+    </p>
+    <p>© 2020 alexander held</p>
   </div>
 </page>
