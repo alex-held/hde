@@ -18,45 +18,44 @@ export class BannerComponent implements OnInit {
   @Output()
   active: EventEmitter<number> = new EventEmitter();
   activeBanner: number = 0;
-  banners: Banner[];
+  banners: Banner[] = [
+    {
+      name: "Ihr Elektriker Meisterbetrieb mit langjähriger Erfahrung!",
+      description:
+        "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
+      imgUrl: "assets/images/banner-1.jpg",
+      order: 1
+    },
+    {
+      name: "Sicherungen",
+      description:
+        "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
+      imgUrl: "assets/images/banner-2.jpg",
+      order: 2
+    },
+    {
+      name: "Glasfaser",
+      description:
+        "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
+      imgUrl: "assets/images/banner-3.jpg",
+      order: 3
+    },
+    {
+      name: "Checkup",
+      description:
+        "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
+      imgUrl: "assets/images/banner-4.jpg",
+      order: 4
+    }
+  ];
 
   areas: string[] = ["top", "left", "center ", "right ", "bottom"];
 
   getImageUrl(): string {
-    return this.banners[this.activeBanner].imgUrl;
-  }
-
-  constructor() {
-    this.banners = [
-      {
-        name: "Ihr Elektriker Meisterbetrieb mit langjähriger Erfahrung!",
-        description:
-          "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
-        imgUrl: "assets/images/banner-1.jpg",
-        order: 1
-      },
-      {
-        name: "Sicherungen",
-        description:
-          "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
-        imgUrl: "assets/images/banner-2.jpg",
-        order: 2
-      },
-      {
-        name: "Glasfaser",
-        description:
-          "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
-        imgUrl: "assets/images/banner-3.jpg",
-        order: 3
-      },
-      {
-        name: "Checkup",
-        description:
-          "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
-        imgUrl: "assets/images/banner-4.jpg",
-        order: 4
-      }
-    ];
+    if (this.banners.length > 0) {
+      return this.banners[this.activeBanner].imgUrl;
+    }
+    return "";
   }
 
   shouldBeVisible(id: Number): boolean {
@@ -69,9 +68,7 @@ export class BannerComponent implements OnInit {
       .pipe(repeat())
       .subscribe(value => {
         const newValue = 1 + (value & (this.banners.length - 1));
-        console.log({ old: value, n: newValue });
-        this.activeBanner = newValue;
-        this.active.emit(newValue);
+        this.activeBanner = newValue - 1;
       });
   }
 }

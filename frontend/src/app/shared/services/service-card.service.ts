@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { ServiceCardModel } from "src/app/shared/services/serviceCardModel.js";
+import { ServiceCardModel } from "src/app/shared/models/service-card.model.js";
 
 @Injectable({
   providedIn: "root"

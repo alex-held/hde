@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { ServiceCardModel } from "src/app/shared/services/serviceCardModel";
+import { ServiceCardModel } from "src/app/shared/models/service-card.model";
 
 @Component({
   selector: "app-service-card",
@@ -12,11 +12,4 @@ export class ServiceCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-}
-
-export interface ServiceOffer {
-  url?: string;
-  title: string;
-  subtitle: string | any;
-  long_description: string;
 }

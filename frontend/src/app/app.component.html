@@ -1,22 +1,21 @@
-<div fxLayout="column">
-  <
+<div fxLayout="column" fxLayoutAlign="space-between stretch">
 
-  <app-header fxLayout="row"></app-header>
+  <app-header fxLayout="row" fxLayoutAlign="space-between stretch"></app-header>
 
-  <banner fxFill fxLayout="row"></banner>
+  <banner fxFill fxLayout="row" fxLayoutAlign="space-between stretch"></banner>
 
-  <page fxLayout="row" name="services">
+  <page fxLayout="row" name="services" fxLayoutAlign="space-between stretch">
     <app-service-card-grid></app-service-card-grid>
   </page>
 
-  <about-us fxLayout="row"></about-us>
+  <about-us fxLayout="row" fxLayoutAlign="space-between stretch"></about-us>
 
   <page fxLayout="column" fxLayoutAlign="space-between stretch" name="contact">
     <app-contact-form
-		fxLayout="row"
-		fxLayoutAlign="space-between stretch"
-	></app-contact-form>
+      fxLayout="row"
+      fxLayoutAlign="space-between stretch"
+    ></app-contact-form>
   </page>
 
-  <app-footer fxLayout="row"></app-footer>
+  <app-footer fxLayout="row" fxLayoutAlign="space-between stretch"></app-footer>
 </div>

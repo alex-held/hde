@@ -14,7 +14,7 @@ import { ContactService } from "../shared/services/contact.service";
   styleUrls: ["./contact.component.sass"]
 })
 export class ContactComponent implements OnInit {
-  submitStatus: boolean = false;
+  submitStatus: boolean = true;
   contactForm!: FormGroup;
 
   latitude: number = 51.005612;

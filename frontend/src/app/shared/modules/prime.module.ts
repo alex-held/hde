@@ -14,7 +14,7 @@ import { TriStateCheckboxModule } from "primeng/tristatecheckbox";
 import { VirtualScrollerModule } from "primeng/virtualscroller";
 import { StepsModule } from "primeng/steps";
 import { SplitButtonModule } from "primeng/splitbutton";
-
+import { OrganizationChartModule } from "primeng/organizationchart";
 import { MenuModule } from "primeng/menu";
 import { SpinnerModule } from "primeng/spinner";
 import { SliderModule } from "primeng/slider";
@@ -44,7 +44,7 @@ import { GalleriaModule } from "primeng/galleria";
 import { FileUploadModule } from "primeng/fileupload";
 import { ProgressBarModule } from "primeng/progressbar";
 import { FieldsetModule } from "primeng/fieldset";
-import { DynamicDialogModule } from "primeng/dynamicdialog";
+import { DialogService, DynamicDialogModule } from "primeng/dynamicdialog";
 import { MessagesModule } from "primeng/messages";
 import { DragDropModule } from "primeng/dragdrop";
 import { FocusTrapModule } from "primeng/focustrap";
@@ -76,6 +76,7 @@ import { NgModule } from "@angular/core";
 
 @NgModule({
   imports: [
+    OrganizationChartModule,
     CardModule,
     CaptchaModule,
     ContextMenuModule,
@@ -151,6 +152,7 @@ import { NgModule } from "@angular/core";
   ],
   exports: [
     CardModule,
+    OrganizationChartModule,
     CaptchaModule,
     ContextMenuModule,
     DeferModule,
@@ -223,6 +225,6 @@ import { NgModule } from "@angular/core";
     RippleModule,
     AccordionModule
   ],
-  providers: []
+  providers: [DialogService]
 })
 export class PrimeModule {}

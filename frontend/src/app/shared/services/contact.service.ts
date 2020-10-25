@@ -1,21 +1,20 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {Observable} from "rxjs";
-import {environment} from "src/environments/environment.js";
-import {ContactModel} from '../contact.model';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { ContactFormModel } from "src/app/shared/models/contact-form.model";
+import { environment } from "src/environments/environment";
 
-@Injectable ({
-	providedIn: 'root'
+@Injectable({
+  providedIn: "root"
 })
 export class ContactService {
+  url = "";
 
-	url = "";
+  constructor(private http: HttpClient) {
+    this.url = environment.contactApi;
+  }
 
-	constructor (private http: HttpClient){
-		this.url = environment.contactApi;
-	}
-
-	submitContactForm (contactModel: ContactModel): Observable<any> {
-		return this.http.post (this.url, contactModel);
-	}
+  submitContactForm(contactModel: ContactFormModel): Observable<any> {
+    return this.http.post(this.url, contactModel);
+  }
 }

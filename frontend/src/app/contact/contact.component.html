@@ -29,6 +29,9 @@
       [latitude]="latitude"
       [longitude]="longitude"
       [zoom]="zoom"
+	  [disableDoubleClickZoom]="true"
+	  [maxZoom]="zoom"
+	  [minZoom]="zoom"
       fxFlex="70%"
       style="height: 600px !important;"
     >
@@ -106,10 +109,10 @@
 
       <ng-template
         [ngIf]="submitStatus"
-        fxLayout="column"
-        fxLayoutAlign="space-between stretch"
+
       >
-        <span>Ein Mitarbeiter wird sich umgehend bei Ihnen melden!</span>
+        <span fxLayout="column"
+			  fxLayoutAlign="space-between stretch">Ein Mitarbeiter wird sich umgehend bei Ihnen melden!</span>
       </ng-template>
     </form>
   </div>
