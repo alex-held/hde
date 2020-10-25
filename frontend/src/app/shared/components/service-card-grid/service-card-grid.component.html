@@ -1,5 +1,21 @@
-<div class="content" fxLayoutAlign="space-between stretch"  fxLayout.xs="column"  fxLayout.sm="column" fxLayout.md="row wrap" fxLayout="row wrap" fxLayoutGap="16px grid" >
-	<div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let service of services">
-		  <app-service-card [service]="service"></app-service-card>
-	  </div>
+<div
+  fxLayoutAlign="space-between stretch"
+  fxLayout.xs="column"
+  fxLayout.sm="column"
+  fxLayout.md="row"
+  fxLayout="row"
+  fxLayoutGap="16px"
+>
+  <div
+	fxLayout.xs="column"
+	fxLayout.sm="column"
+	fxLayout.md="row"
+	fxLayout="row"
+    fxFlex.xs="100%"
+    fxFlex.sm="33%"
+	fxLayoutAlign="space-between stretch"
+	*ngFor="let service of services"
+  >
+    <app-service-card [service]="service"></app-service-card>
+  </div>
 </div>

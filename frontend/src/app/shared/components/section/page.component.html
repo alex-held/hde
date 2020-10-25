@@ -1,6 +1,7 @@
 <section [id]="name" fxLayout="column" fxLayoutAlign="space-between stretch">
-	<mat-divider></mat-divider>
-	<h1>{{name}}</h1>
+	<h1>{{name | uppercase}}</h1>
+	<br>
 	<ng-content></ng-content>
+	<br>
 	<mat-divider></mat-divider>
 </section>
