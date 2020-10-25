@@ -53,6 +53,7 @@ export class BannerComponent implements OnInit {
   areas: string[] = ["top", "left", "center ", "right ", "bottom"];
 
   getImageUrl(): string {
+    return "assets/images/logo-banner.jpg";
     if (this.banners.length > 0) {
       return this.banners[this.activeBanner].imgUrl;
     }
