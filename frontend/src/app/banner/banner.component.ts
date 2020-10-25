@@ -12,7 +12,8 @@ export interface Banner {
 
 @Component({
   selector: "banner",
-  templateUrl: "./banner.component.html"
+  templateUrl: "./banner.component.html",
+  styleUrls: ["./banner.component.sass"]
 })
 export class BannerComponent implements OnInit {
   @Output()
@@ -56,6 +57,10 @@ export class BannerComponent implements OnInit {
       return this.banners[this.activeBanner].imgUrl;
     }
     return "";
+  }
+
+  getBanner(): Banner {
+    return this.banners[this.activeBanner];
   }
 
   shouldBeVisible(id: Number): boolean {

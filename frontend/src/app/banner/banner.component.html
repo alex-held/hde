@@ -1,3 +1,21 @@
-<page name="banner" fxLayout="column nowrap" fxFill>
-  <img fxFlexFill src="{{ getImageUrl() }}" alt="banner" />
+<page
+  name="banner"
+  fxLayout="column"
+  fxLayoutAlign="space-between stretch"
+
+  class="container"
+>
+  <div fxLayout="row" class="banner">
+    <img src="{{ getImageUrl() }}" alt="banner" />
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="space-between stretch" class="heading">
+    <h1 fxLayout="row">
+      {{ getBanner().name }}
+    </h1>
+
+    <span fxFlex="80%">
+      {{ getBanner().description }}
+    </span>
+  </div>
 </page>

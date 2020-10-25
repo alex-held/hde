@@ -1,11 +1,13 @@
-<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="10px">
+<div  fxLayout="column" fxLayoutAlign="space-between stretch" >
 
-  <app-header fxLayout="row" fxLayoutAlign="space-between stretch"></app-header>
+  <app-header  fxLayout="row" fxLayoutAlign="space-between stretch"></app-header>
 
-  <banner fxFill fxLayout="row" fxLayoutAlign="space-between stretch"></banner>
+  <banner fxLayout="row" fxLayoutAlign="space-between stretch"></banner>
 
   <page fxLayout="row" name="services" fxLayoutAlign="space-between stretch">
-    <app-service-card-grid></app-service-card-grid>
+	 <page fxLayout="column" fxLayoutAlign="space-between stretch" name="services">
+		   <app-service-card-grid></app-service-card-grid>
+	 </page>
   </page>
 
   <about-us fxLayout="row" fxLayoutAlign="space-between stretch"></about-us>
