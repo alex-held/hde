@@ -12,9 +12,10 @@ import { HeaderComponent } from "./header/header.component";
 import { AgmCoreModule } from "@agm/core";
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
-  declarations: [AppComponent, ContactComponent, HeaderComponent, AboutUsComponent, FooterComponent],
+  declarations: [AppComponent, ContactComponent, HeaderComponent, AboutUsComponent, FooterComponent, ServiceComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

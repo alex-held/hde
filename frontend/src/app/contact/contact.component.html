@@ -1,6 +1,10 @@
-<div class="container" fxLayout="column" fxLayoutAlign="space-between stretch">
-
-
+<page
+  fxLayout="column"
+  fxLayoutAlign="space-between stretch"
+  name="contact"
+  title="Kontakt"
+  class="container"
+>
   <div fxLayout="row wrap" fxLayoutAlign="space-even stretch">
     <app-info-label
       icon="business"
@@ -23,21 +27,26 @@
 
   <mat-divider [vertical]="true"></mat-divider>
 
-  <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="space-between stretch" fxLayoutGap="10">
+  <div
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-between stretch"
+    fxLayoutGap="10"
+  >
     <agm-map
       [disableDefaultUI]="true"
       [latitude]="latitude"
       [longitude]="longitude"
       [zoom]="zoom"
-	  [disableDoubleClickZoom]="true"
-	  [maxZoom]="zoom"
-	  [minZoom]="zoom"
+      [disableDoubleClickZoom]="true"
+      [maxZoom]="zoom"
+      [minZoom]="zoom"
       fxFlex="70%"
-	  fxHide.xs="true"
-	  fxHide.sm="true"
-	  fxHide.md="false"
-	  fxHide="false"
-
+      fxHide.xs="true"
+      fxHide.sm="true"
+      fxHide.md="false"
+      fxHide="false"
       style="height: 600px !important;"
     >
       <agm-marker
@@ -52,17 +61,18 @@
       [formGroup]="contactForm"
       class="form-control"
       fxFlex="25"
-	  fxLayout="column nowrap" fxLayoutAlign="space-evenly stretch"
-	>
+      fxLayout="column nowrap"
+      fxLayoutAlign="space-evenly stretch"
+    >
       <div fxLayout="row" fxLayoutAlign="center stretch">
-		  <br fxHide.xs="false" fxHide.sm="false" fxHide="true">
-		  <br fxHide.xs="false" fxHide.sm="false" fxHide="true">
-		  <br fxHide.xs="false" fxHide.sm="false" fxHide="true">
-		  <br fxHide.xs="false" fxHide.sm="false" fxHide="true">
-		  <br fxHide.xs="false" fxHide.sm="false" fxHide="true">
-		  <br fxHide.xs="false" fxHide.sm="false" fxHide="true">
-		  <br fxHide.xs="false" fxHide.sm="false" fxHide="true">
-		  <br fxHide.xs="false" fxHide.sm="false" fxHide="true">
+        <br fxHide.xs="false" fxHide.sm="false" fxHide="true" />
+        <br fxHide.xs="false" fxHide.sm="false" fxHide="true" />
+        <br fxHide.xs="false" fxHide.sm="false" fxHide="true" />
+        <br fxHide.xs="false" fxHide.sm="false" fxHide="true" />
+        <br fxHide.xs="false" fxHide.sm="false" fxHide="true" />
+        <br fxHide.xs="false" fxHide.sm="false" fxHide="true" />
+        <br fxHide.xs="false" fxHide.sm="false" fxHide="true" />
+        <br fxHide.xs="false" fxHide.sm="false" fxHide="true" />
         <span class="mat-headline" fxHide.xs="true" fxHide.sm="true">
           Wir freuen uns über Ihren Anruf oder über Ihre Nachricht hier über das
           Kontaktformular.
@@ -120,14 +130,11 @@
         Kontakt aufnehmen"
       </button>
 
-      <ng-template
-        [ngIf]="submitStatus"
-
-      >
-        <span fxLayout="column"
-			  fxLayoutAlign="space-between stretch">Ein Mitarbeiter wird sich umgehend bei Ihnen melden!</span>
+      <ng-template [ngIf]="submitStatus">
+        <span fxLayout="column" fxLayoutAlign="space-between stretch"
+          >Ein Mitarbeiter wird sich umgehend bei Ihnen melden!</span
+        >
       </ng-template>
     </form>
   </div>
-
-</div>
+</page>

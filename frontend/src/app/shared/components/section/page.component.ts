@@ -9,6 +9,9 @@ export class PageComponent implements OnInit {
   @Input()
   name!: string;
 
+  @Input()
+  title: string = "";
+
   constructor() {}
 
   ngOnInit(): void {}

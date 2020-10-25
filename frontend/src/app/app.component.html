@@ -1,23 +1,8 @@
-<div  fxLayout="column" fxLayoutAlign="space-between stretch" >
-
-  <app-header  fxLayout="row" fxLayoutAlign="space-between stretch"></app-header>
-
-  <banner fxLayout="row" fxLayoutAlign="space-between stretch"></banner>
-
-  <page fxLayout="row" name="services" fxLayoutAlign="space-between stretch">
-	 <page fxLayout="column" fxLayoutAlign="space-between stretch" name="services">
-		   <app-service-card-grid></app-service-card-grid>
-	 </page>
-  </page>
-
-  <about-us fxLayout="row" fxLayoutAlign="space-between stretch"></about-us>
-
-  <page fxLayout="column" fxLayoutAlign="space-between stretch" name="contact">
-    <app-contact-form
-      fxLayout="row"
-      fxLayoutAlign="space-between stretch"
-    ></app-contact-form>
-  </page>
-
+<div fxLayout="column" fxLayoutAlign="space-between stretch">
+  <app-header fxLayout="row" fxLayoutAlign="space-between stretch"></app-header>
+  <app-banner fxLayout="row" fxLayoutAlign="space-between stretch"></app-banner>
+  <app-service fxLayout="row" fxLayoutAlign="space-between stretch"></app-service>
+  <app-about-us fxLayout="row" fxLayoutAlign="space-between stretch"></app-about-us>
+  <app-contact-form fxLayout="row" fxLayoutAlign="space-between stretch"></app-contact-form>
   <app-footer fxLayout="row" fxLayoutAlign="space-between stretch"></app-footer>
 </div>

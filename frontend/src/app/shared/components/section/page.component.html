@@ -1,5 +1,5 @@
 <section [id]="name" fxLayout="column" fxLayoutAlign="space-between stretch" fxFill>
-	<h1>{{name | uppercase}}</h1>
+	<h1 *ngIf="title">{{title | uppercase}}</h1>
 	<br>
 	<ng-content fxLayout="row" fxLayoutAlign="space-between stretch" ></ng-content>
 	<br>

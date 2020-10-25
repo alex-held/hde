@@ -11,7 +11,7 @@ export interface Banner {
 }
 
 @Component({
-  selector: "banner",
+  selector: "app-banner",
   templateUrl: "./banner.component.html",
   styleUrls: ["./banner.component.sass"]
 })
