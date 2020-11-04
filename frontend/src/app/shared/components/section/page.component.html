@@ -2,7 +2,8 @@
   <h1 *ngIf="title">{{ title | uppercase }}</h1>
   <br />
   <ng-content fxLayout="row" fxLayoutAlign="space-between stretch"></ng-content>
-  <br />
+
+  <div class="spacer" fxHide.sm="true" fxHide.xs="true"></div>
+
   <mat-divider></mat-divider>
-  <div class="spacer"></div>
 </section>

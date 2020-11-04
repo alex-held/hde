@@ -1,11 +1,19 @@
 <page
   class="banner"
   fxLayout="column"
+  fxLayout.xs="row"
+  fxLayout.sm="row"
   fxLayoutAlign="space-between stretch"
   name="banner"
 >
-
-  <div fxLayout="row" fxLayoutAlign="space-between center">
+  <div
+    fxLayout="row"
+    fxLayout.xs="column-reverse"
+    fxLayout.sm="column-reverse"
+    fxLayout.md="column-reverse"
+    fxLayoutAlign="space-between stretch"
+	fxLayoutGap="5rem"
+  >
     <div
       class="heading"
       fxLayout="column"
@@ -22,19 +30,19 @@
       <a
         class="banner-action"
         color="primary"
-        fxFlexAlign="baseline"
+        fxFlexAlign="stretch"
         href="#contact"
         mat-flat-button
       >
         Kontakt
       </a>
     </div>
-
-    <img
-      alt="banner"
-      fxFlexAlign.sm="center"
-      fxFlexAlign.xs="center"
-      src="{{ getImageUrl() }}"
-    />
+    <div fxLayout="row">
+      <img
+        alt="banner"
+		fxFlexAlign="end"
+        src="{{ getImageUrl() }}"
+      />
+    </div>
   </div>
 </page>
