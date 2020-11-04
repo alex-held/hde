@@ -1,34 +1,40 @@
 <page
-  name="banner"
+  class="banner"
   fxLayout="column"
   fxLayoutAlign="space-between stretch"
-  class="container"
+  name="banner"
 >
-  <div
-    fxLayout="row-reverse"
-    fxLayoutAlign="space-between stretch"
-    class="banner"
-  >
-    <img src="{{ getImageUrl() }}" alt="banner" />
-  </div>
 
-  <div fxLayout="column" fxLayoutAlign="space-between stretch" class="heading">
-    <h1 fxLayout="row">
-      {{ getBanner().name }}
-    </h1>
-    <br />
-    <span fxLayout="row">
-      {{ getBanner().description }}
-    </span>
-
-    <a
-      class="banner-action"
-      fxFlexAlign="baseline"
-      mat-flat-button
-      color="primary"
-      href="#contact"
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div
+      class="heading"
+      fxLayout="column"
+      fxLayoutAlign="space-between stretch"
     >
-      Kontakt
-    </a>
+      <h1>
+        {{ getBanner().name }}
+      </h1>
+      <br />
+      <span>
+        {{ getBanner().description }}
+      </span>
+
+      <a
+        class="banner-action"
+        color="primary"
+        fxFlexAlign="baseline"
+        href="#contact"
+        mat-flat-button
+      >
+        Kontakt
+      </a>
+    </div>
+
+    <img
+      alt="banner"
+      fxFlexAlign.sm="center"
+      fxFlexAlign.xs="center"
+      src="{{ getImageUrl() }}"
+    />
   </div>
 </page>

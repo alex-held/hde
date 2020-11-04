@@ -21,7 +21,7 @@ export class BannerComponent implements OnInit {
   activeBanner: number = 0;
   banners: Banner[] = [
     {
-      name: "Ihr Elektriker Meisterbetrieb mit langjähriger Erfahrung!",
+      name: "Der Elektroheld!",
       description:
         "Für Sie sind wir stets auf dem neuesten Stand der Technik und helfen mit Experten-Erfahrung professionell weiter. Informieren Sie sich hier über unser Angebot und erfahren Sie, was wir für Sie tun können.",
       imgUrl: "assets/images/banner-1.jpg",

@@ -1,7 +1,8 @@
-<section [id]="name" fxLayout="column" fxLayoutAlign="space-between stretch" fxFill>
-	<h1 *ngIf="title">{{title | uppercase}}</h1>
-	<br>
-	<ng-content fxLayout="row" fxLayoutAlign="space-between stretch" ></ng-content>
-	<br>
-	<mat-divider></mat-divider>
+<section [id]="name" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <h1 *ngIf="title">{{ title | uppercase }}</h1>
+  <br />
+  <ng-content fxLayout="row" fxLayoutAlign="space-between stretch"></ng-content>
+  <br />
+  <mat-divider></mat-divider>
+  <div class="spacer"></div>
 </section>
