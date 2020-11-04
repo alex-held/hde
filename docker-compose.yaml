@@ -23,3 +23,5 @@ services:
                 - author=alex-held
             context: frontend
             dockerfile: Dockerfile
+            args:
+                GMAP_KEY: "${MAPS_API_KEY}"

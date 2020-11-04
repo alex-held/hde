@@ -2,11 +2,10 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import {Environment} from "@angular/compiler-cli/src/ngtsc/typecheck/src/environment.js";
-
 export const environment = {
-	production: false,
-	contactApi: 'http://localhost:8000/api/contact'
+  production: false,
+  apiKey: "",
+  contactApi: "http://localhost:8000/api/contact"
 };
 
 /*

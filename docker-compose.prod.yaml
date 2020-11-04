@@ -3,6 +3,9 @@ version: '3.5'
 services:
 
     server:
+        extends:
+            file: docker-compose.yaml
+            service: server
         env_file:
             - prod.env
         ports:
@@ -10,6 +13,9 @@ services:
 
 
     frontend:
+        extends:
+            file: docker-compose.yaml
+            service: frontend
         env_file:
             - prod.env
         ports:
