@@ -5,32 +5,45 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- task: DockerCompose@0
-  displayName: "🔨Build Docker Images 🔨"
-  inputs:
-    containerregistrytype: 'Container Registry'
-    dockerRegistryEndpoint: 'canister container registry'
-    dockerComposeFile: 'docker-compose.yaml'
-    action: 'Build services'
-    includeSourceTags: true
-    includeLatestTag: true
+stages:
+- stage: Preview
+  variables:
+  - group: FRONTEND_SECRETS_PROD
 
-- task: DockerCompose@0
-  displayName: "📦 Push Docker Images 📦"
-  inputs:
-    containerregistrytype: 'Container Registry'
-    dockerRegistryEndpoint: 'canister container registry'
-    dockerComposeFile: 'docker-compose.yaml'
-    action: 'Push services'
-    includeSourceTags: true
-    includeLatestTag: true
+  jobs:
+  - job: FirstJob
 
-- task: AzureWebAppContainer@1
-  displayName: "🚢 Deploy to Azure WebApp 🛳"
-  inputs:
-    azureSubscription: 'hde'
-    appName: 'held-der-elektrik'
-    containers: 'cloud.canister.io:5000/alexheld/hde-frontend'
-    multicontainerConfigFile: 'docker-compose.prod.yaml'
+    steps:
+    - task: DockerCompose@0
+      displayName: "🔨Build Docker Images 🔨"
+      inputs:
+        containerregistrytype: 'Container Registry'
+        dockerRegistryEndpoint: 'canister container registry'
+        dockerComposeFile: 'docker-compose.yaml'
+        action: 'Build services'
+        includeSourceTags: true
+        includeLatestTag: true
+
+    - task: DockerCompose@0
+      displayName: "📦 Push Docker Images 📦"
+      inputs:
+        containerregistrytype: 'Container Registry'
+        dockerRegistryEndpoint: 'canister container registry'
+        dockerComposeFile: 'docker-compose.yaml'
+        action: 'Push services'
+        includeSourceTags: true
+        includeLatestTag: true
+
+    - task: AzureWebAppContainer@1
+      displayName: "🚢 Deploy to Azure WebApp 🛳"
+      inputs:
+        azureSubscription: 'hde'
+        appName: 'held-der-elektrik'
+        containers: 'cloud.canister.io:5000/alexheld/hde-frontend'
+        multicontainerConfigFile: 'docker-compose.prod.yaml'
+
+
+
+
+
 
