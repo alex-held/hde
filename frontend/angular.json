@@ -39,20 +39,21 @@
 					},
 					"configurations": {
 						"production": {
+							"showCircularDependencies": false,
 							"fileReplacements": [
 								{
 									"replace": "src/environments/environment.ts",
 									"with": "src/environments/environment.prod.ts"
 								}
 							],
-							"optimization": false,
-							"sourceMap": true,
-							"extractCss": false,
-							"namedChunks": true,
+							"crossOrigin": "anonymous",
+							"optimization": true,
+							"sourceMap": false,
+							"extractCss": true,
+							"namedChunks": false,
 							"aot": false,
-							"extractLicenses": false,
-							"vendorChunk": false,
-							"buildOptimizer": false
+							"extractLicenses": true,
+							"vendorChunk": false
 						}
 					}
 				},

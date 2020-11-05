@@ -8,7 +8,7 @@ import { EmployeeDetailsModel } from "src/app/shared/models/employee-details.mod
 })
 export class EmployeeListCardComponent implements OnInit {
   @Input()
-  employee?: EmployeeDetailsModel;
+  employee!: EmployeeDetailsModel;
 
   constructor() {}
 

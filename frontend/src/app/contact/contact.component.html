@@ -84,7 +84,7 @@
       <mat-form-field fxLayout="column" fxLayoutAlign="space-between stretch">
         <mat-label>Name</mat-label>
         <input formControlName="name" matInput type="text" />
-        <mat-error *ngIf="!contactForm.get('name').hasError('required')">
+        <mat-error *ngIf="!contactForm.get('name')?.hasError('required')">
           Name is <strong>required</strong>
         </mat-error>
       </mat-form-field>
@@ -94,13 +94,13 @@
         <input formControlName="mail" matInput type="email" />
         <mat-error
           *ngIf="
-            contactForm.get('mail').hasError('email') &&
-            !contactForm.get('mail').hasError('required')
+            contactForm.get('mail')?.hasError('email') &&
+            !contactForm.get('mail')?.hasError('required')
           "
         >
           Please enter a valid email address
         </mat-error>
-        <mat-error *ngIf="contactForm.get('mail').hasError('required')">
+        <mat-error *ngIf="contactForm.get('mail')?.hasError('required')">
           Email is <strong>required</strong>
         </mat-error>
       </mat-form-field>
@@ -116,7 +116,7 @@
           matInput
         ></textarea>
 
-        <mat-error *ngIf="contactForm.get('message').hasError('required')">
+        <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
           Message is <strong>required</strong>
         </mat-error>
       </mat-form-field>
