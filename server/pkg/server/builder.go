@@ -40,9 +40,6 @@ func (s *serverBuilder) UsePort(port int) ServerBuilder {
 
 func (s *serverBuilder) Build() *http.Server {
 	r := NewRouter(s.routingConfigurations...)
-	r.GET("/", func(c *gin.Context) {
-		c.String(200, "Works!")
-	})
 	r.GET("/hello/:name", func(c *gin.Context) {
 		name :=	c.Param("name")
 		c.String(200, fmt.Sprintf("Hello, %s!\nHow are you/s", name))

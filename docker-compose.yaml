@@ -17,11 +17,12 @@ services:
         image: "alexheld/hde-frontend:${FRONTEND_TAG}"
         ports:
             - "8080:80"
+            - "8081:8001"
         build:
             labels:
                 - maintainer=contact@alexheld.io
                 - author=alex-held
-            context: frontend
-            dockerfile: Dockerfile
+            context: .
+            dockerfile: frontend/Dockerfile
             args:
                 GMAP_KEY: "${MAPS_API_KEY}"

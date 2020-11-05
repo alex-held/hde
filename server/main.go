@@ -19,11 +19,18 @@ func main() {
 		port = 8000
 	}
 	
-	server := server.NewServerBuilder().
+	webappDirEnv := os.Getenv("WEBAPP_DIR")
+	if webappDirEnv == "" {
+		webappDirEnv = "/usr/share/nginx/html"
+	}
+	
+	s := server.NewServerBuilder().
 		WithHandler(cors.AllowAll().Handler).
 		WithRoutingConfiguration(contact.ConfigureContactRoutes()).
+		WithRoutingConfiguration(contact.ConfigureStaticWebApp(webappDirEnv)).
 		UsePort(port).
 		Build()
 	
-	log.Fatal(server.ListenAndServe())
+	log.Fatal(s.ListenAndServe())
 }
+

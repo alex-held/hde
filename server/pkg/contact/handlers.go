@@ -9,17 +9,20 @@ import (
   "github.com/alex-held/hde/server/pkg/server"
 )
 
+
+
+
+func ConfigureStaticWebApp(webappDir string) server.RoutingConfiguration {
+  return func(r IRouter) IRouter {
+    r.StaticFS("/", Dir(webappDir, true))
+    return r
+  }
+}
+
 func ConfigureContactRoutes() server.RoutingConfiguration {
   return func(r IRouter) IRouter {
     contact := r.Group("/contact")
     contact.POST("/", handleContactFormRequest)
-    contact.GET("/home", func(c *Context) {
-      c.JSON(202, map[string]interface{}{
-        "name":  "alex",
-        "age":   23,
-        "skill": "dev",
-      })
-    })
     return r
   }
 }

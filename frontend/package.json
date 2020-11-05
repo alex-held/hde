@@ -18,6 +18,7 @@
     "start:backend": "scripts/gin-serve.sh",
     "start:frontend": "ng serve --open",
     "build": "ng build",
+    "build:prod": "ng build --prod --aot",
     "test": "ng test --code-coverage --port 9879 --log-level debug",
     "test:watch": "ng test --code-coverage --watch=true",
     "test:app:watch": "ng test hde --watch=true",
